@@ -2,7 +2,10 @@ import '../styles/App.css';
 
 function App() {
   return (
-    <div></div>
+    <div>
+      <h1>Focus</h1>
+      
+    </div>
   );
 }
 
