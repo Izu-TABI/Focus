@@ -1,13 +1,15 @@
 import '../styles/App.css'
-import './timer/InputTimes'
-import './timer/Buttom'
-import './timer/Timer'
-
+import InputTimes from './timer/InputTimes';
+import Timer from './timer/Timer';
+import Button from './timer/Button';
 
 function App() {
   return (
     <div>
       <h1>Focus</h1>
+      <Timer></Timer>
+      <InputTimes></InputTimes>
+      <Button></Button>
     </div>
   );
 }
