@@ -1,25 +1,13 @@
 import React from 'react'
 
-class Timer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      hello: props.hello,
-      world: props.world
+const Timer = () => {
 
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <div>Timer</div>
-      </div>
-    )
-  }  
-
+  return (
+    <>
+      <div>Timer</div>
+      <canvas width="500" height="500" id="cycle-timer" className=""></canvas>
+    </>
+  )
 }
-
-
 
 export default Timer
