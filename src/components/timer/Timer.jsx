@@ -1,5 +1,5 @@
 import React from 'react'
-import CycleTimer from './CycleTimer'
+import CycleTimer from './CycleTimer' 
 
 class Timer extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class Timer extends React.Component {
     return (
       <>
         <div>Timer</div>
-        <canvas width="500" height="500" id="cycle-timer" className="canvas"></canvas>
+        <canvas width="400" height="400" id="cycle-timer" className="canvas"></canvas>
   
         <CycleTimer time={this.state.hours * 3600 + this.state.minutes * 60 + this.state.seconds}></CycleTimer>
       </>
