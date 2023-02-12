@@ -6,10 +6,13 @@ import Button from './timer/Button';
 function App() {
   return (
     <div>
-      <h1>Focus</h1>
-      <Timer></Timer>
-      <InputTimes></InputTimes>
-      <Button></Button>
+      <h1 className="text-center">Focus</h1>
+
+        <Timer></Timer>
+        <InputTimes></InputTimes>
+        <Button></Button>
+      
+        
     </div>
   );
 }
