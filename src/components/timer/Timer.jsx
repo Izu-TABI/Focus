@@ -4,7 +4,8 @@ class Timer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      
+      hello: props.hello,
+      world: props.world
 
     }
   }

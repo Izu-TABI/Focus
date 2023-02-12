@@ -10,7 +10,7 @@ function App() {
     <div>
       <h1 className="text-center">Focus</h1>
 
-        <Timer></Timer>
+        <Timer hello="world!" world="hello"></Timer>
         <InputTimes></InputTimes>
         <Button></Button>
       
