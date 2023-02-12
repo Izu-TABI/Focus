@@ -21,9 +21,6 @@ const CycleTimer = (props) => {
       context.fillStyle = "lightgreen";
       context.arc(150, 150, 100, 0 * Math.PI / 180, sita * Math.PI / 180, false);
       context.fill();
-      if (sita === 360) {
-        alert("1分経過")
-      }
     }, (sec / 360 * 1000))
 
 
