@@ -24,14 +24,14 @@ const CycleTimer = (props) => {
       if (sita === 360) {
         alert("1分経過")
       }
-    }, (sec * 60))
+    }, (sec / 360 * 1000))
 
 
     
 
   }, [])
   return (
-    <div>hello</div>
+    <div></div>
   )
 }
 
