@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 
 
-const CycleTimer = () => {
-
+const CycleTimer = (props) => {
+  const sec = props.time
   useEffect(() => {
     const  element = document.getElementById('cycle-timer')
     let context = element.getContext('2d')
@@ -24,7 +24,8 @@ const CycleTimer = () => {
       if (sita === 360) {
         alert("1分経過")
       }
-    }, 1000)
+    }, (sec * 60))
+
 
     
 
