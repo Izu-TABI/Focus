@@ -2,11 +2,13 @@ import React, {useEffect} from 'react'
 
 
 const CycleTimer = (props) => {
-  const sec = props.time
+  console.log(props.seconds)
   useEffect(() => {
+
     const  element = document.getElementById('cycle-timer')
     let context = element.getContext('2d')
 
+    context.clearRect(0, 0, element.width, element.height)
     context.beginPath();
     context.moveTo(150, 150)
     context.fillStyle = "red";
@@ -14,19 +16,21 @@ const CycleTimer = (props) => {
     context.fill();
 
     let sita = 0
-    setInterval(() => {
+    let intervalId = setInterval(() => {
       sita += 1
+      if (sita === 360) {
+        context.clearRect(150, 150, element.width, element.height)
+        clearInterval(intervalId)
+      }
       context.beginPath();
-      context.moveTo(150, 150)
+      context.moveTo(150, 150);
       context.fillStyle = "lightgreen";
+
       context.arc(150, 150, 100, 0 * Math.PI / 180, sita * Math.PI / 180, false);
       context.fill();
-    }, (sec / 360 * 1000))
+    }, (props.seconds / 360 * 1000))
+  }, [props.seconds])
 
-
-    
-
-  }, [])
   return (
     <div></div>
   )
