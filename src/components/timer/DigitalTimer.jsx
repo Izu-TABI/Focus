@@ -6,12 +6,14 @@ const DigitalTimer = (props) => {
 
     useEffect(() => {
         setTime(props.seconds)
-    }, [props.seconds])
+        console.log(props.paused)
+    }, [props.seconds, props.paused])
 
 
     useEffect(() => {
       const id = setInterval(() => {
-        if (time > 0) setTime(time - 1);
+        if (props.paused === false) clearInterval(id);
+        else if (time > 0) setTime(time - 1);
       }, 1000);
       return () => clearInterval(id);
     }, [time]);

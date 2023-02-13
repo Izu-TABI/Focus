@@ -3,9 +3,9 @@ import CycleTimer from './CycleTimer';
 import DigitalTimer from './DigitalTimer';
 
 
-export default function Timer(props) {
+export default function Timer() {
   const [seconds, setSeconds] = useState('')
-  const [paused, setPaused] = useState(false)
+  const [paused, setPaused] = useState('')
   let hoursTemp;
   let minutesTemp;
   let inputSeconds = 0;
@@ -22,41 +22,38 @@ export default function Timer(props) {
   const handleSubmit = () => {
     if (!hoursTemp) hoursTemp = 0
     if (!minutesTemp) minutesTemp = 0
+
     inputSeconds = (hoursTemp * 3600) + (minutesTemp * 60)  
     setSeconds(inputSeconds)
     setPaused(true)
+    document.getElementById('start').style.display = 'none'
+    document.getElementById('reset').style.display = 'block'
   }
-  
-  useEffect(() => {
-    const element = document.getElementById('cycle-timer')
-    let context = element.getContext('2d')
 
-    context.beginPath();
-    context.moveTo(150, 150)
-    context.fillStyle = "red";
-    context.arc(150, 150, 100, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
-    context.fill();
-  }, [])
+  const handleReset = () => {
+    setPaused(false)
+  }
+
   
   return (
     <>
       
-      <canvas width="400" height="400" id="cycle-timer" className="canvas"></canvas>
+      <div className="text-center"><canvas width="400" height="400" id="cycle-timer" className="canvas"></canvas></div>
 
       <form className='text-center'>
         <div>
           hour <br/>
-          <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours}/>
+          <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto'/>
         </div>
         <div>
           minutes<br/>
-          <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes}/>
+          <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto'/>
         </div>
-        <button type="button" onClick={() => {handleSubmit()}}>開始</button>
-        <button type="button" onClick={()=>{window.location.reload()}}>リセット</button>
+        <button type="button" onClick={() => {handleSubmit()}} id='start' className="mx-auto btn btn-primary">開始</button>
+        <button onClick={() => handleReset()} id='reset' className="mx-auto btn btn-primary">リセット</button>
       </form>
       <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
-      <DigitalTimer seconds={seconds}></DigitalTimer>
+      <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
       
 
     </>

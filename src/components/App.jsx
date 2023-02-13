@@ -8,7 +8,6 @@ function App() {
     <div>
       <h1 className="text-center">Focus</h1>
         <Timer></Timer>
-        <button type="button" onClick={() => {console.log('hello')}}>ボタン２</button>
     </div>
   );
 }
