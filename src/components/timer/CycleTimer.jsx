@@ -12,6 +12,7 @@ const CycleTimer = (props) => {
       context.beginPath();
       context.fillStyle = "red";
       context.arc(200, 200, 100, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
+ 
       context.fill();
   })
 
@@ -36,7 +37,6 @@ const CycleTimer = (props) => {
         context.beginPath();
         context.moveTo(200, 200);
         context.fillStyle = "lightgreen";
-        
         context.arc(200, 200, 100, 0 * Math.PI / 180, sita * Math.PI / 180, false);
         context.fill();
       }
