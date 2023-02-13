@@ -40,8 +40,9 @@ export default function Timer(props) {
   
   return (
     <>
-      <div>Timer</div>
+      
       <canvas width="400" height="400" id="cycle-timer" className="canvas"></canvas>
+
       <form className='text-center'>
         <div>
           hour <br/>

@@ -1,21 +1,25 @@
 import React, {useEffect} from 'react'
 
 const CycleTimer = (props) => {
-  let intervalId;
-
   useEffect(() => {
     const  element = document.getElementById('cycle-timer')
     let context = element.getContext('2d')
-
     context.beginPath();
-    context.moveTo(150, 150)
     context.fillStyle = "red";
     context.arc(150, 150, 100, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
     context.fill();
+  })
+
+  useEffect(() => {
+    
+
+
+    const  element = document.getElementById('cycle-timer')
+    let context = element.getContext('2d')
 
     let sita = 0
 
-    intervalId = setInterval(() => {
+    const intervalId = setInterval(() => {
       if (sita <= 360) {
         sita += 1
         context.beginPath();
