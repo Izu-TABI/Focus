@@ -52,7 +52,7 @@ export default function Timer(props) {
           <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes}/>
         </div>
         <button type="button" onClick={() => {handleSubmit()}}>開始</button>
-        <button type="button" onClick={()=>{window.location.reload()}}>もう一度</button>
+        <button type="button" onClick={()=>{window.location.reload()}}>リセット</button>
       </form>
       <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
       <DigitalTimer seconds={seconds}></DigitalTimer>
