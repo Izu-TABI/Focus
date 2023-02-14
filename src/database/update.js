@@ -1,10 +1,8 @@
-import { doc , updateDoc} from 'firebase/firestore';
+import { doc , updateDoc, getDoc } from 'firebase/firestore';
 import {auth, db } from './firebase'
-import { getDoc } from 'firebase/firestore'
 
 export async function update(time) {
     try {
-        
         const userRef = doc(db, 'users', auth.currentUser.uid)
         const docSnap = await getDoc(userRef) // データの取得
         const data = {

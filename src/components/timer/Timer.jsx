@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import CycleTimer, { intervalIds } from './CycleTimer';
 import DigitalTimer, { digitalId, timeLimit } from './DigitalTimer';
 import Button from '@mui/material/Button';
-import { add } from '../../database/add';
 import { update } from '../../database/update';
 
-export default function Timer() {
+const Timer = () => {
   const [seconds, setSeconds] = useState('')
   const [paused, setPaused] = useState('')
   let hoursTemp;
@@ -73,3 +72,5 @@ export default function Timer() {
     </>
   )    
 }
+
+export default Timer
