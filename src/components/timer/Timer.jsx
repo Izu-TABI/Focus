@@ -49,11 +49,11 @@ export default function Timer() {
       <form className='text-center'>
         <div>
           hour <br/>
-          <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto' id='input-hours'/>
+          <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto' id='input-hours' autoComplete="off"/>
         </div>
         <div>
           minutes<br/>
-          <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes'/>
+          <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes' autoComplete="off"/>
         </div>
         <Button variant="contained" type="submit" onClick={(e) => {handleSubmit(e)}} id='start' className="mx-auto">開始</Button>
         <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto">リセット</Button>
