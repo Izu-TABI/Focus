@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '@mui/material/Button';
-import { auth } from '../database/firebase'
+import { auth } from '../../database/firebase'
 
 
 const SignOutButton = () => {

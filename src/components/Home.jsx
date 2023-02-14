@@ -2,7 +2,9 @@ import React from 'react'
 import Timer from './timer/Timer'
 import { auth, provider } from '../database/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import SignIn from './SignIn'
+import SignIn from './certification/SignIn'
+import SignOutButton from './certification/SignOutButton'
+import UserInfo from './certification/UserInfo'
 
 
 const Home = () => {
@@ -15,7 +17,7 @@ const Home = () => {
                 <>
                     <UserInfo></UserInfo>
                     <Timer></Timer>
-                    <SignOutBotton></SignOutBotton>
+                    <SignOutButton></SignOutButton>
                 </>
                 ) : (
                     <>

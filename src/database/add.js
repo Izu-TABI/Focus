@@ -1,5 +1,5 @@
-import { collection, doc , setDoc} from 'firebase/firestore';
-import {auth, db} from './firebase'
+import { doc , setDoc} from 'firebase/firestore';
+import {auth, db } from './firebase'
 
 
 export async function add() {
@@ -8,7 +8,7 @@ export async function add() {
         const data = {
             userName: auth.currentUser.displayName,
         }
-        setDoc(userRef, data)
+        await setDoc(userRef, data)
         console.log("Document written with ID: ", userRef.id);
     } catch (err) {
         console.error("Error adding document: ", err);

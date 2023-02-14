@@ -1,12 +1,11 @@
 import React from 'react';
-import { auth, provider } from '../database/firebase'
 import Button from '@mui/material/Button';
 import { signInWithPopup } from 'firebase/auth'
-import { add } from '../database/add';
-
+import { add } from '../../database/add';
+import { auth, provider } from '../../database/firebase';
 
 function SignInButton() {
-     const signInWithGoogle = async() => {
+    const signInWithGoogle = async() => {
         await signInWithPopup(auth, provider)
         add()
     }

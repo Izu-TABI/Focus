@@ -1,5 +1,5 @@
 import React from 'react'
-import { auth } from '../database/firebase'
+import { auth } from '../../database/firebase'
 
 const UserInfo = () => {
     return (
