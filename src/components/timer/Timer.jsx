@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import CycleTimer, { intervalIds } from './CycleTimer';
-import DigitalTimer, { digitalId } from './DigitalTimer';
+import DigitalTimer, { digitalId, timeLimit } from './DigitalTimer';
 import Button from '@mui/material/Button';
 import { add } from '../../database/add';
 
@@ -24,6 +24,8 @@ export default function Timer() {
     e.preventDefault()
     document.getElementById('input-hours').value = ''
     document.getElementById('input-minutes').value = ''
+    document.getElementById('input-hours').style.display = 'none'
+    document.getElementById('input-minutes').style.display = 'none'
 
     if (!hoursTemp) hoursTemp = 0
     if (!minutesTemp) minutesTemp = 0
@@ -36,6 +38,10 @@ export default function Timer() {
   }
 
   const handleReset = () => {
+    document.getElementById('input-hours').style.display = 'block'
+    document.getElementById('input-minutes').style.display = 'block'
+
+    add(timeLimit)
     clearInterval(digitalId)
     clearInterval(intervalIds)
     setPaused(false)
@@ -57,7 +63,7 @@ export default function Timer() {
           <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes' autoComplete="off"/>
         </div>
         <Button variant="contained" type="submit" onClick={(e) => {handleSubmit(e)}} id='start' className="mx-auto">開始</Button>
-        <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto">リセット</Button>
+        <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto">保存</Button>
       </form>
       <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
       <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>

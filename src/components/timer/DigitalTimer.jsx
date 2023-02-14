@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react'
+import { add } from '../../database/add';
 
 let digitalId;
-const DigitalTimer = (props) => {
+let timeLimit;
 
+const DigitalTimer = (props) => {
     const [time, setTime] = useState(0);
 
     useEffect(() => {
         if (props.paused) setTime(props.seconds)
         else {
             setTime(0)
-            console.log(props.seconds - time) //経過時間
         }
         
         console.log(props.paused)
@@ -18,8 +19,12 @@ const DigitalTimer = (props) => {
 
     useEffect(() => {
       digitalId = setInterval(() => {
-        if (props.paused === false) clearInterval(digitalId);
-        else if (time > 0) setTime(time - 1);
+        if (props.paused === false || time === 0) {
+            clearInterval(digitalId)
+        } else if (time > 0) {
+            setTime(time - 1)
+            timeLimit = props.seconds - time + 1
+        }
       }, 1000);
       return () => clearInterval(digitalId);
     }, [time]);
@@ -30,4 +35,4 @@ const DigitalTimer = (props) => {
 }
 
 export default DigitalTimer
-export {digitalId}
+export {digitalId, timeLimit}
