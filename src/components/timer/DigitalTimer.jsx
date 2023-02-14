@@ -1,21 +1,24 @@
 import React, {useState, useEffect} from 'react'
 
+let digitalId;
 const DigitalTimer = (props) => {
 
     const [time, setTime] = useState(0);
 
     useEffect(() => {
-        setTime(props.seconds)
+        if (props.paused) setTime(props.seconds)
+        else setTime(0)
+        
         console.log(props.paused)
     }, [props.seconds, props.paused])
 
 
     useEffect(() => {
-      const id = setInterval(() => {
-        if (props.paused === false) clearInterval(id);
+      digitalId = setInterval(() => {
+        if (props.paused === false) clearInterval(digitalId);
         else if (time > 0) setTime(time - 1);
       }, 1000);
-      return () => clearInterval(id);
+      return () => clearInterval(digitalId);
     }, [time]);
 
     return (
@@ -24,3 +27,4 @@ const DigitalTimer = (props) => {
 }
 
 export default DigitalTimer
+export {digitalId}

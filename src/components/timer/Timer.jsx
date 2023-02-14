@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import CycleTimer from './CycleTimer';
-import DigitalTimer from './DigitalTimer';
-
+import CycleTimer, { intervalIds } from './CycleTimer';
+import DigitalTimer, { digitalId } from './DigitalTimer';
+import Button from '@mui/material/Button';
 
 export default function Timer() {
   const [seconds, setSeconds] = useState('')
@@ -19,7 +19,11 @@ export default function Timer() {
     minutesTemp = e.target.value
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    document.getElementById('input-hours').value = ''
+    document.getElementById('input-minutes').value = ''
+
     if (!hoursTemp) hoursTemp = 0
     if (!minutesTemp) minutesTemp = 0
 
@@ -31,6 +35,8 @@ export default function Timer() {
   }
 
   const handleReset = () => {
+    clearInterval(digitalId)
+    clearInterval(intervalIds)
     setPaused(false)
   }
 
@@ -43,14 +49,14 @@ export default function Timer() {
       <form className='text-center'>
         <div>
           hour <br/>
-          <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto'/>
+          <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto' id='input-hours'/>
         </div>
         <div>
           minutes<br/>
-          <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto'/>
+          <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes'/>
         </div>
-        <button type="button" onClick={() => {handleSubmit()}} id='start' className="mx-auto btn btn-primary">開始</button>
-        <button onClick={() => handleReset()} id='reset' className="mx-auto btn btn-primary">リセット</button>
+        <Button variant="contained" type="submit" onClick={(e) => {handleSubmit(e)}} id='start' className="mx-auto">開始</Button>
+        <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto">リセット</Button>
       </form>
       <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
       <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>

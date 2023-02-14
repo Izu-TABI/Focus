@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 
+let intervalIds;
 const CycleTimer = (props) => {
+  intervalIds = new Array();
   const [intervalTimes, setIntervalTimes] = useState('')
-  let intervalIds = new Array();
   let id;
   let sita = 0
 
@@ -57,3 +58,4 @@ const CycleTimer = (props) => {
 }
 
 export default CycleTimer
+export {intervalIds}

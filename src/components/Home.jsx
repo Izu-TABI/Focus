@@ -3,6 +3,7 @@ import React from 'react'
 import Timer from './timer/Timer'
 import { auth, provider } from '../database/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import Button from '@mui/material/Button';
 
 const Home = () => {
     const [user] = useAuthState(auth)
@@ -39,9 +40,7 @@ function SignInBotton() {
         <>
             <div className='text-center'>
             <h5>Focusへようこそ。</h5>
-            <button onClick={signInWithGoogle} className="btn btn-outline-primary">
-                <p>Google</p>
-            </button>
+            <Button variant="outlined" onClick={signInWithGoogle}>Google</Button>
             </div>
         </>
     )
@@ -49,9 +48,7 @@ function SignInBotton() {
 
 function SignOutBotton() {
     return (
-        <button onClick={() => auth.signOut()} className="btn btn-outline-primary">
-            <p>サインアウト</p>
-        </button>
+        <Button variant="outlined" onClick={() => auth.signOut()}>Sign out</Button>
     )
 }
 
