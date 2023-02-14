@@ -7,7 +7,10 @@ const DigitalTimer = (props) => {
 
     useEffect(() => {
         if (props.paused) setTime(props.seconds)
-        else setTime(0)
+        else {
+            setTime(0)
+            console.log(props.seconds - time) //経過時間
+        }
         
         console.log(props.paused)
     }, [props.seconds, props.paused])

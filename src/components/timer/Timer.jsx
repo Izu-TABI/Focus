@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import CycleTimer, { intervalIds } from './CycleTimer';
 import DigitalTimer, { digitalId } from './DigitalTimer';
 import Button from '@mui/material/Button';
+import { add } from '../../database/add';
 
 export default function Timer() {
   const [seconds, setSeconds] = useState('')
@@ -57,6 +58,7 @@ export default function Timer() {
         </div>
         <Button variant="contained" type="submit" onClick={(e) => {handleSubmit(e)}} id='start' className="mx-auto">開始</Button>
         <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto">リセット</Button>
+        <Button variant="contained" onClick={add}></Button>
       </form>
       <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
       <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
