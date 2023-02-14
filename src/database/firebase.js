@@ -1,14 +1,14 @@
 import { initializeApp } from 'firebase/app'
-import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+import { GoogleAuthProvider } from 'firebase/auth';
 
-
-const API_KEY = process.env.FIREBASE_API_KEY
-const AUTH_DOMAIN = process.env.AUTH_DOMAIN
-const PROJECT_ID = process.env.PROJECT_ID
-const STORAGE_BUCKET = process.env.STORAGE_BUCKET
-const MESSAGING_SENDER_ID = process.env.MESSAGING_SENDER_ID
-const APP_ID = process.env.APP_ID
-const MEASUREMENT_ID = process.env.MEASUREMENT_ID
+const API_KEY = process.env.REACT_APP_FIREBASE_API_KEY
+const AUTH_DOMAIN = process.env.REACT_APP_FIREBASE_API_KEY_AUTH_DOMAIN
+const PROJECT_ID = process.env.REACT_APP_PROJECT_ID
+const STORAGE_BUCKET = process.env.REACT_APP_STORAGE_BUCKET
+const MESSAGING_SENDER_ID = process.env.REACT_APP_MESSAGING_SENDER_ID
+const APP_ID = process.env.REACT_APP_APP_ID
+const MEASUREMENT_ID = process.env.REACT_APP_MEASUREMENT_ID
 
 
 const firebaseConfig = {
@@ -22,4 +22,7 @@ const firebaseConfig = {
   };
 
 const app = initializeApp(firebaseConfig)
-const analytics = getAnalytics(app);
+const auth = getAuth(app)
+const provider = new GoogleAuthProvider();
+
+export {auth, provider}

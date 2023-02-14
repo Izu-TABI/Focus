@@ -1,13 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/App.css'
 import '../styles/CycleTimer.css'
-import Timer from './timer/Timer';
+import Home from './Home'
 
 function App() {
   return (
     <div>
       <h1 className="text-center">Focus</h1>
-        <Timer></Timer>
+        <Home></Home>
     </div>
   );
 }
