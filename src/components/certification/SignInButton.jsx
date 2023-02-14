@@ -3,11 +3,26 @@ import Button from '@mui/material/Button';
 import { signInWithPopup } from 'firebase/auth'
 import { add } from '../../database/add';
 import { auth, provider } from '../../database/firebase';
+import { db } from '../../database/firebase'; 
+import { doc, getDoc } from 'firebase/firestore'
+
+const newAccount = async() => {
+    const docRef = doc(db, 'users', auth.currentUser.uid)
+    const docSnap = await getDoc(docRef)
+    if (!docSnap.exists()) {
+        return true
+    } else {
+        return false
+    }
+}
+
 
 function SignInButton() {
     const signInWithGoogle = async() => {
         await signInWithPopup(auth, provider)
-        add()
+        if (newAccount()) {
+            add()
+        }
     }
 
     return (

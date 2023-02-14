@@ -2,7 +2,7 @@ import { doc , updateDoc} from 'firebase/firestore';
 import {auth, db } from './firebase'
 import { getDoc } from 'firebase/firestore'
 
-export async function add(time) {
+export async function update(time) {
     try {
         
         const userRef = doc(db, 'users', auth.currentUser.uid)

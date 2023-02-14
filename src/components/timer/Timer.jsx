@@ -3,6 +3,7 @@ import CycleTimer, { intervalIds } from './CycleTimer';
 import DigitalTimer, { digitalId, timeLimit } from './DigitalTimer';
 import Button from '@mui/material/Button';
 import { add } from '../../database/add';
+import { update } from '../../database/update';
 
 export default function Timer() {
   const [seconds, setSeconds] = useState('')
@@ -41,7 +42,7 @@ export default function Timer() {
     document.getElementById('input-hours').style.display = 'block'
     document.getElementById('input-minutes').style.display = 'block'
 
-    add(timeLimit)
+    update(timeLimit)
     clearInterval(digitalId)
     clearInterval(intervalIds)
     setPaused(false)

@@ -1,18 +1,15 @@
 import { doc , setDoc} from 'firebase/firestore';
 import {auth, db } from './firebase'
-import { getDoc } from 'firebase/firestore'
 
-export async function add(time) {
+export async function add() {
     try {
         
         const userRef = doc(db, 'users', auth.currentUser.uid)
-        const docSnap = await getDoc(userRef) // データの取得
         const data = {
             userName: auth.currentUser.displayName,
-            totalTime: docSnap.data().totalTime + time
+            totalTime: 0
         }
         await setDoc(userRef, data)
-        console.log(docSnap.data().totalTime)
         console.log("Document written with ID: ", userRef.id);
     } catch (err) {
         console.error("Error adding document: ", err);
