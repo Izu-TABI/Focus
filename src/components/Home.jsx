@@ -12,6 +12,7 @@ const Home = () => {
         {
             user ? (
                 <>
+                    <UserInfo></UserInfo>
                     <Timer></Timer>
                     <SignOutBotton></SignOutBotton>
                 </>
@@ -35,16 +36,31 @@ function SignInBotton() {
     }
 
     return (
-        <button onClick={signInWithGoogle}>
-            <p>Googleでサインイン</p>
-        </button>
+        <>
+            <div className='text-center'>
+            <h5>Focusへようこそ。</h5>
+            <button onClick={signInWithGoogle} className="btn btn-outline-primary">
+                <p>Google</p>
+            </button>
+            </div>
+        </>
     )
 }
 
 function SignOutBotton() {
     return (
-        <button onClick={() => auth.signOut()}>
+        <button onClick={() => auth.signOut()} className="btn btn-outline-primary">
             <p>サインアウト</p>
         </button>
+    )
+}
+
+function UserInfo() {
+    return (
+        <>
+            <div className="userInfo">
+                <p>ようこそ、{auth.currentUser.displayName}さん。</p>
+            </div>
+        </>
     )
 }
