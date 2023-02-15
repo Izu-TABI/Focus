@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import CycleTimer, { intervalIds } from './CycleTimer';
-import DigitalTimer, { digitalId, timeLimit } from './DigitalTimer';
+import DigitalTimer, { digitalId, elapsedTime } from './DigitalTimer';
 import Button from '@mui/material/Button';
 import { update } from '../../database/update';
 
@@ -51,7 +51,7 @@ const Timer = () => {
     document.getElementById('input-minutes').style.display = 'block'
     document.getElementById('digital-timer').style.display = 'none'
 
-    update(timeLimit)
+    update(elapsedTime)
     clearInterval(digitalId)
     clearInterval(intervalIds)
     setPaused(false)

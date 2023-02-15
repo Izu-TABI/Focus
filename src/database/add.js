@@ -15,4 +15,3 @@ export async function add() {
         console.error("Error adding document: ", err);
     }
 }
-
