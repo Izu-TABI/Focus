@@ -20,6 +20,7 @@ const DigitalTimer = (props) => {
     useEffect(() => {
       digitalId = setInterval(() => {
         if (props.paused === false || time === 0) {
+            timeLimit = 0
             clearInterval(digitalId)
         } else if (time > 0) {
             setTime(time - 1)

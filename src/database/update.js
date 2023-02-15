@@ -8,7 +8,11 @@ export async function update(time) {
         const data = {
             totalTime: docSnap.data().totalTime + time
         }
-        await updateDoc(userRef, data)
+        if (data.totalTime) {
+            await updateDoc(userRef, data)
+            
+        }
+        
         console.log(docSnap.data().totalTime)
         console.log("Document written with ID: ", userRef.id);
     } catch (err) {
