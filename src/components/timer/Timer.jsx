@@ -43,11 +43,13 @@ const Timer = () => {
     setPaused(true)
     document.getElementById('start').style.display = 'none'
     document.getElementById('reset').style.display = 'block'
+    document.getElementById('digital-timer').style.display = 'block'
   }
 
   const handleReset = () => {
     document.getElementById('input-hours').style.display = 'block'
     document.getElementById('input-minutes').style.display = 'block'
+    document.getElementById('digital-timer').style.display = 'none'
 
     update(timeLimit)
     clearInterval(digitalId)
@@ -60,22 +62,22 @@ const Timer = () => {
     <>
       <div className="text-center">
         <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
-        <form>
-          <div>
-            hour <br/>
-            <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto' id='input-hours' autoComplete="off"/>
-          </div>
-          <div>
-            minutes<br/>
-            <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes' autoComplete="off"/>
-          </div>
-        </form>
-
+      </div>
+        <div>
+          <form className='form-area'>
+            <div>
+              <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto' id='input-hours' autoComplete="off" placeholder='hours'/>
+            </div>
+            <div>
+              <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes' autoComplete="off" placeholder='minutes'/>
+            </div>
+          </form>
+        </div>
+      <div className="text-center">
         <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
         <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto">保存</Button>
         <Button variant="contained" type="submit" onClick={(e) => {handleSubmit(e)}} id='start' className="mx-auto">開始</Button>
       </div>
-
     </>
   )    
 }

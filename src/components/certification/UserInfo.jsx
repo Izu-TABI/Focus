@@ -16,7 +16,8 @@ const UserInfo = () => {
     return (
         <>
             <div className="userInfo text-center">
-                <p><br/>こんにちは、{auth.currentUser.displayName}さん。合計{Math.floor(time / 3600)}時間{Math.floor(time % 3600 / 60)}分の勉強時間です。</p>
+                <p className='welcome-msg'>こんにちは、{auth.currentUser.displayName}さん。</p> 
+                {/* 合計{Math.floor(time / 3600)}時間{Math.floor(time % 3600 / 60)}分の勉強時間です。 */}
             </div>
         </>
     )

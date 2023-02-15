@@ -12,7 +12,7 @@ const CycleTimer = (props) => {
     let context = element.getContext('2d')
       context.beginPath();
       context.fillStyle = "red";
-      context.arc(200, 200, 100, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
+      context.arc(100, 100, 100, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
  
       context.fill();
   })
@@ -36,9 +36,9 @@ const CycleTimer = (props) => {
       if (sita <= 360) {
         sita += 1
         context.beginPath();
-        context.moveTo(200, 200);
+        context.moveTo(100, 100);
         context.fillStyle = "lightgreen";
-        context.arc(200, 200, 100, 0 * Math.PI / 180, sita * Math.PI / 180, false);
+        context.arc(100, 100, 100, 0 * Math.PI / 180, sita * Math.PI / 180, false);
         context.fill();
       }
     }, (intervalTimes)))
@@ -50,9 +50,7 @@ const CycleTimer = (props) => {
 
   return (
     <>
-      <div className="text-center">
-        <canvas width="400" height="400" id="cycle-timer" className="canvas"></canvas>
-      </div>
+        <canvas width="200" height="200" id="cycle-timer" className="canvas"></canvas>
     </>
   )
 }
