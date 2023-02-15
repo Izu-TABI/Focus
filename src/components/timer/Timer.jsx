@@ -12,12 +12,20 @@ const Timer = () => {
   let inputSeconds = 0;
 
   const handleChangeHours = (e) => {
-    hoursTemp = e.target.value
-    console.log(hoursTemp)
+    if (isNaN(e.target.value)) {
+      document.getElementById('input-hours').value = ''  
+    } else {
+      hoursTemp = e.target.value
+    }
+    
   }
 
   const handleChangeMinutes = (e) => {
-    minutesTemp = e.target.value
+    if (isNaN(e.target.value)) {
+      document.getElementById('input-minutes').value = ''
+    } else {
+      minutesTemp = e.target.value
+    }
   }
 
   const handleSubmit = (e) => {
