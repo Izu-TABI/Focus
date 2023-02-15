@@ -50,8 +50,8 @@ const CycleTimer = (props) => {
 
   return (
     <>
-      <div>
-        
+      <div className="text-center">
+        <canvas width="400" height="400" id="cycle-timer" className="canvas"></canvas>
       </div>
     </>
   )

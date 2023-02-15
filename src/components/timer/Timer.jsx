@@ -54,28 +54,27 @@ const Timer = () => {
     clearInterval(intervalIds)
     setPaused(false)
   }
-
+  
   
   return (
     <>
-      
-      <div className="text-center"><canvas width="400" height="400" id="cycle-timer" className="canvas"></canvas></div>
+      <div className="text-center">
+        <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
+        <form>
+          <div>
+            hour <br/>
+            <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto' id='input-hours' autoComplete="off"/>
+          </div>
+          <div>
+            minutes<br/>
+            <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes' autoComplete="off"/>
+          </div>
+        </form>
 
-      <form className='text-center'>
-        <div>
-          hour <br/>
-          <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto' id='input-hours' autoComplete="off"/>
-        </div>
-        <div>
-          minutes<br/>
-          <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes' autoComplete="off"/>
-        </div>
-        <Button variant="contained" type="submit" onClick={(e) => {handleSubmit(e)}} id='start' className="mx-auto">開始</Button>
+        <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
         <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto">保存</Button>
-      </form>
-      <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
-      <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
-      
+        <Button variant="contained" type="submit" onClick={(e) => {handleSubmit(e)}} id='start' className="mx-auto">開始</Button>
+      </div>
 
     </>
   )    

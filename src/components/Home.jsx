@@ -5,7 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import SignIn from './certification/SignIn'
 import SignOutButton from './certification/SignOutButton'
 import UserInfo from './certification/UserInfo'
-
+import Test from './Test'
 
 const Home = () => {
     const [user] = useAuthState(auth)
@@ -14,10 +14,13 @@ const Home = () => {
     <>
         {
             user ? (
-                <>
+                <> 
+                    <Test></Test>
+
+
                     <UserInfo></UserInfo>
                     <Timer></Timer>
-                    <SignOutButton></SignOutButton>
+                    {/* <SignOutButton></SignOutButton> */}
                 </>
                 ) : (
                     <>

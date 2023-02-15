@@ -30,7 +30,7 @@ const DigitalTimer = (props) => {
     }, [time]);
 
     return (
-      <h3>残り時間: {Math.floor(time / 3600)}時間{Math.ceil(time % 3600 / 60)}分</h3>
+      <p><br/>残り時間: {Math.floor(time / 3600)}時間{Math.ceil(time % 3600 / 60)}分</p>
     );
 }
 
