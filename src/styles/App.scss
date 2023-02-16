@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Noto+Serif+Gurmukhi:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 
 * {
     margin: 0;
@@ -6,11 +7,14 @@
 }
 
 .app-name-main {
-    font-family: 'EB Garamond', serif;
-    font-family: 'Noto Serif Gurmukhi', serif;
-    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 5vh;
     margin-top: 5vh;
     margin-bottom: 3vh;
+}
+
+p {
+    font-size: 2vh;
 }
 
 @keyframes fadeInAnimation {
