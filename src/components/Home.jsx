@@ -4,7 +4,6 @@ import { auth, provider } from '../database/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import SignOutButton from './certification/SignOutButton'
 import UserInfo from './certification/UserInfo'
-import Test from './Test'
 import Startpage from './StartPage'
 
 const Home = () => {
@@ -15,9 +14,6 @@ const Home = () => {
         {
             user ? (
                 <> 
-                    <Test></Test>
-
-
                     <UserInfo></UserInfo>
                     <Timer></Timer>
                     <SignOutButton></SignOutButton>
