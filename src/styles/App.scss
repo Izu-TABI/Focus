@@ -1,15 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Noto+Serif+Gurmukhi:wght@600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
 
-h1 {
-    margin: 30px;
+.app-name-main {
+    font-family: 'EB Garamond', serif;
+    font-family: 'Noto Serif Gurmukhi', serif;
+    font-size: 2em;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
 }
 
 
 .welcome-msg {
     font-size: 1em;
     color: #313131;
-    margin: 3vh;
+    margin: 5vh 0;
+}
+
+.introduction {
+    margin: 30px;
+}
+
+.pencil-img {
+    margin: 15px 0;
 }

@@ -6,6 +6,7 @@ import { auth, provider } from '../../database/firebase';
 import { db } from '../../database/firebase'; 
 import { doc, getDoc } from 'firebase/firestore'
 import GoogleButton from 'react-google-button'
+import { display } from '@mui/system';
 
 function SignInButton() {
 
@@ -24,7 +25,9 @@ function SignInButton() {
 
     return (
         <>
-            <GoogleButton onClick={signInWithGoogle} style={{margin: '0 auto'}}></GoogleButton>
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '5vh'}}>
+                <GoogleButton onClick={signInWithGoogle}></GoogleButton>
+            </div>
         </>
     )
 }

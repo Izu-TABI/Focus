@@ -6,7 +6,7 @@ import Home from './Home'
 function App() {
   return (
     <div>
-      <h1 className="text-center">Focus</h1>
+      <h1 className="text-center app-name-main">Focus</h1>
         <Home></Home>
     </div>
   );
