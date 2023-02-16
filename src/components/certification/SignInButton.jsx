@@ -5,6 +5,7 @@ import { add } from '../../database/add';
 import { auth, provider } from '../../database/firebase';
 import { db } from '../../database/firebase'; 
 import { doc, getDoc } from 'firebase/firestore'
+import GoogleButton from 'react-google-button'
 
 function SignInButton() {
 
@@ -23,10 +24,7 @@ function SignInButton() {
 
     return (
         <>
-            <div className='text-center'>
-            <h5>Focusへようこそ。</h5>
-            <Button variant="outlined" onClick={signInWithGoogle}>Google</Button>
-            </div>
+            <GoogleButton onClick={signInWithGoogle} style={{margin: '0 auto'}}></GoogleButton>
         </>
     )
 }
