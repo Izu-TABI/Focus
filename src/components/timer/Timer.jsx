@@ -34,6 +34,12 @@ const Timer = () => {
     document.getElementById('input-minutes').value = ''
     document.getElementById('input-hours').style.display = 'none'
     document.getElementById('input-minutes').style.display = 'none'
+    document.getElementById('cycle-timer').style.marginTop = '17vh'
+    document.getElementById('start').style.display = 'none'
+    document.getElementById('reset').style.display = 'block'
+    document.getElementById('digital-timer').style.display = 'block'
+    document.querySelector('.app-name-main').style.display = 'none'
+    
 
     if (!hoursTemp) hoursTemp = 0
     if (!minutesTemp) minutesTemp = 0
@@ -41,15 +47,16 @@ const Timer = () => {
     inputSeconds = (hoursTemp * 3600) + (minutesTemp * 60)  
     setSeconds(inputSeconds)
     setPaused(true)
-    document.getElementById('start').style.display = 'none'
-    document.getElementById('reset').style.display = 'block'
-    document.getElementById('digital-timer').style.display = 'block'
+
   }
 
   const handleReset = () => {
     document.getElementById('input-hours').style.display = 'block'
     document.getElementById('input-minutes').style.display = 'block'
     document.getElementById('digital-timer').style.display = 'none'
+    document.querySelector('.app-name-main').style.display = 'block'
+    document.getElementById('cycle-timer').style.marginTop = '5.5vh'
+
 
     update(elapsedTime)
     clearInterval(digitalId)
