@@ -44,6 +44,8 @@ const Timer = () => {
     document.getElementById('digital-timer').style.display = 'block'
 
     document.querySelector('.app-name-main').style.display = 'none'
+
+    document.querySelector('.bottom-nav').style.display = 'none'
     
 
     if (!hoursTemp) hoursTemp = 0
@@ -62,8 +64,10 @@ const Timer = () => {
     document.getElementById('digital-timer').style.display = 'none'
 
     document.querySelector('.app-name-main').style.display = 'block'
-    
+
     document.getElementById('cycle-timer').style.marginTop = '5.5vh'
+
+    document.querySelector('.bottom-nav').style.display = 'block'
 
 
     update(elapsedTime)

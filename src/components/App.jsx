@@ -19,6 +19,7 @@ function App() {
   const [userPage, setUserPage] = useState(false)
 
   const [value, setValue] = React.useState('recents');
+  
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -56,6 +57,7 @@ function App() {
         )
 
       }
+
       <footer className='bottom-nav'>
         <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} value={value} onChange={handleChange}>
           <BottomNavigationAction
