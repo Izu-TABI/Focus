@@ -56,31 +56,32 @@ function App() {
         )
 
       }
+      <footer className='bottom-nav'>
+        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} value={value} onChange={handleChange}>
+          <BottomNavigationAction
+            label="Home"
+            value="home"
+            onClick={handleHomeChange}
+            icon={<HomeIcon/>}
+          />
 
-      <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} value={value} onChange={handleChange}>
-        <BottomNavigationAction
-          label="Home"
-          value="home"
-          onClick={handleHomeChange}
-          icon={<HomeIcon/>}
-        />
+          <BottomNavigationAction
+            label="Data"
+            value="data"
+            onClick={handleUserDataChange}
+            icon={<EqualizerIcon/>}
+          />
 
-        <BottomNavigationAction
-          label="Data"
-          value="data"
-          onClick={handleUserDataChange}
-          icon={<EqualizerIcon/>}
-        />
-
-      <BottomNavigationAction 
-          label="Account" 
-          value="account" 
-        onClick={handleAccountChange}
-        icon={<AccountCircleIcon/>
-      } />
+        <BottomNavigationAction 
+            label="Account" 
+            value="account" 
+            onClick={handleAccountChange}
+          icon={<AccountCircleIcon/>
+        } />
 
 
-    </BottomNavigation>
+        </BottomNavigation>
+      </footer>
     </div>
   );
 }

@@ -12,6 +12,20 @@
   margin-bottom: 3vh;
 }
 
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+* :not(.bottom-nav) {
+  animation-name: fadeInAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
 .welcome-msg {
   font-size: 1em;
   color: #313131;

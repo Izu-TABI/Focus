@@ -1,9 +1,14 @@
 import React from 'react'
+import SignOutButton from './certification/SignOutButton'
 
 const AccountSettings = () => {
   return (
     <>
-        <div>AccountSettings</div>
+        <>
+            <div className="text-center">
+                <SignOutButton></SignOutButton>
+            </div>
+        </>
     </>
   )
 }

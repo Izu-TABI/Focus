@@ -4,8 +4,12 @@ import { auth } from '../../database/firebase'
 
 
 const SignOutButton = () => {
+    const signOut = () => {
+        auth.signOut()
+        window.location.reload()
+    }
     return (
-        <Button variant="outlined" onClick={() => auth.signOut()}>Sign out</Button>
+        <Button variant="outlined" onClick={() => {signOut()}}>Sign out</Button>
     )
 }
 
