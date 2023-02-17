@@ -1,12 +1,11 @@
 import React from 'react'
-import { auth, provider } from '../database/firebase'
+import UserInfo from './certification/UserInfo'
 
 const UserData = () => {
     return (
         <>
             <div className="text-center">
-                <p>userData</p>
-                <p>comming soon...</p>
+                <UserInfo></UserInfo>
             </div>
         </>
     )
