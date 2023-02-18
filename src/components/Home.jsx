@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import Timer from './timer/Timer'
-import { auth, provider } from '../database/firebase'
+import { auth } from '../database/firebase' 
 import { useAuthState } from 'react-firebase-hooks/auth'
-import UserInfo from './certification/UserInfo'
 import Startpage from './StartPage'
 
 const Home = () => {
@@ -20,7 +19,6 @@ const Home = () => {
         {
             user ? (
                 <> 
-                    <UserInfo></UserInfo>
                     <Timer></Timer>
                 </>
                 ) : (

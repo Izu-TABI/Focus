@@ -4,7 +4,7 @@ import '../styles/CycleTimer.css'
 import Home from './Home'
 import UserData from './UserData';
 import AccountSettings from './AccountSettings';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import * as React from 'react';
 import BottomNavigation from '@mui/material/BottomNavigation';
