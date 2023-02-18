@@ -21,6 +21,7 @@ const DigitalTimer = (props) => {
 
     // 設定時間が変更された場合
     useEffect(() => {
+      // １秒ごとに更新
       digitalId = setInterval(() => {
         let now = 0;
 
@@ -37,6 +38,7 @@ const DigitalTimer = (props) => {
           clearInterval(digitalId)
         }
       }, 1000);
+
       return () => clearInterval(digitalId);
     }, [time]);
 
