@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 let digitalId;
-let elapsedTime;
+let elapsedTime = 0;
 
 const DigitalTimer = (props) => {
     const [time, setTime] = useState(0);
@@ -11,6 +11,7 @@ const DigitalTimer = (props) => {
     //設定時間または開始、保存ボタンが押された場合
     useEffect(() => {
         if (props.paused) {
+          elapsedTime = 0
           setTime(props.seconds)
           setStartTime(new Date())
         }
@@ -33,7 +34,7 @@ const DigitalTimer = (props) => {
 
         setelapsedTimeState(elapsedTime)
 
-        if (props.paused === false || elapsedTime === props.seconds) {
+        if (props.paused === false) {
           setStartTime(0)
           clearInterval(digitalId)
         }
@@ -43,7 +44,21 @@ const DigitalTimer = (props) => {
     }, [time]);
 
     return (
-      <p id="digital-timer"><br/>残り: {Math.floor(time / 3600)}時間{Math.ceil(time % 3600 / 60)}分<br />{elapsedTimeState}</p>
+      <div id="digital-timer"><br/>
+        {
+          (props.seconds - elapsedTimeState > 0) ? (
+            <>
+              <p>残り時間<br />&nbsp;{Math.floor( (props.seconds - elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((props.seconds - elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>
+            </>
+          ) : (
+            <>
+              <p>合計時間<br />&nbsp;{Math.floor( (elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>  
+              <p>目標時間&nbsp;<b>+</b>&nbsp;{Math.floor((elapsedTimeState - props.seconds) / 3600)}&nbsp;時間&nbsp;{Math.floor((elapsedTimeState - props.seconds) % 3600 / 60)}&nbsp;分&nbsp;{Math.floor((elapsedTimeState - props.seconds)) % 60}&nbsp;秒</p>
+            </>
+          )
+
+        }
+      </div>
     );
 }
 

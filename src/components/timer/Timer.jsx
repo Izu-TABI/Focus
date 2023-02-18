@@ -6,7 +6,7 @@ import { update } from '../../database/update';
 
 const Timer = () => {
   const [seconds, setSeconds] = useState('')
-  const [paused, setPaused] = useState('')
+  const [paused, setPaused] = useState(false)
   let hoursTemp;
   let minutesTemp;
   let inputSeconds = 0;
@@ -58,6 +58,7 @@ const Timer = () => {
   }
 
   const handleReset = () => {
+    
     document.getElementById('input-hours').style.display = 'block'
     document.getElementById('input-minutes').style.display = 'block'
 
@@ -69,10 +70,12 @@ const Timer = () => {
 
     document.querySelector('.bottom-nav').style.display = 'block'
 
+    document.getElementById('start').style.display = 'block'
+    document.getElementById('reset').style.display = 'none'
 
+    console.log(elapsedTime)
     update(elapsedTime)
     clearInterval(digitalId)
-    clearInterval(intervalIds)
     setPaused(false)
   }
   
@@ -94,7 +97,7 @@ const Timer = () => {
         </div>
       <div className="text-center">
         <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
-        <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto">保存</Button>
+        <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto" style={{display: 'none'}}>保存</Button>
         <Button variant="contained" type="submit" onClick={(e) => {handleSubmit(e)}} id='start' className="mx-auto">開始</Button>
       </div>
     </>

@@ -1,59 +1,83 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
-let intervalIds;
+let digitalId;
+let elapsedTime = 0;
+
 const CycleTimer = (props) => {
-  intervalIds = new Array();
-  const [intervalTimes, setIntervalTimes] = useState('')
-  let id;
-  let sita = 0
+    const [time, setTime] = useState(0);
+    const [elapsedTimeState, setelapsedTimeState] = useState(0);
+    const [startTime, setStartTime] = useState(0);
 
-  useEffect(() => {
-    const  element = document.getElementById('cycle-timer')
-    let context = element.getContext('2d')
-      context.beginPath();
-      context.fillStyle = "red";
-      context.arc(100, 100, 100, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
- 
-      context.fill();
-  })
+    useEffect(() => {
+      const  element = document.getElementById('cycle-timer')
+      let context = element.getContext('2d')
 
-  useEffect(() => {
-    clearInterval(intervalIds);
-    if (props.paused && intervalIds.length === 0) setIntervalTimes(props.seconds / 360 * 1000)
-    else {
-      clearInterval(intervalIds.shift())
-      setIntervalTimes(0)
-      document.getElementById('start').style.display = 'block'
-      document.getElementById('reset').style.display = 'none'
-    }
-  }, [props.seconds, props.paused])
-  
-  useEffect(() => {
-    const  element = document.getElementById('cycle-timer')
-    let context = element.getContext('2d')
-    sita = 0
-    intervalIds.push(id = setInterval(() => {
-      if (sita <= 360) {
-        sita += 1
+      let sita = 0
+      const id = setInterval(() => {        
+        if ( sita <= 360 && props.paused === false ) {
+          sita += 1
+          context.beginPath();
+          context.moveTo(100, 100);
+          context.fillStyle = "red";
+          context.arc(100, 100, 100, 0 * Math.PI / 180, sita * Math.PI / 180, false);
+          context.fill();
+        } else {
+          clearInterval(id)
+        }
+      })      
+    }, [props.paused])
+
+    //設定時間または開始、保存ボタンが押された場合
+    useEffect(() => {
+
+        if (props.paused) {
+          setTime(props.seconds)
+          setStartTime(new Date())
+        }
+        else {
+            setTime(0)
+        }
+    }, [props.seconds, props.paused])
+
+    // 設定時間が変更された場合
+    useEffect(() => {
+      const  element = document.getElementById('cycle-timer')
+      let context = element.getContext('2d')
+
+      // １秒ごとに更新
+      digitalId = setInterval(() => {
+        let now = 0;
+
+        //現在時刻
+        now = new Date()
+
+        //経過時間を算出
+        elapsedTime = startTime === 0 ? 0 : Math.floor((now - startTime) / 1000) 
+
+        setelapsedTimeState(elapsedTime)
+    
         context.beginPath();
         context.moveTo(100, 100);
         context.fillStyle = "lightgreen";
-        context.arc(100, 100, 100, 0 * Math.PI / 180, sita * Math.PI / 180, false);
+        context.arc(100, 100, 100.5, 0 * Math.PI / 180, (360 / (time)) * elapsedTime * Math.PI / 180, false);
         context.fill();
-      }
-    }, (intervalTimes)))
-    
-  }, [intervalTimes])
 
+        if (props.paused === false || elapsedTime === props.seconds) {
+          setStartTime(0)
+          elapsedTime = 0          
+          clearInterval(digitalId)
+        }
+      }, 1000);
 
-  
+      return () => clearInterval(digitalId);
+    }, [time]);
 
-  return (
-    <>
-        <canvas width="200" height="200" id="cycle-timer" className="canvas"></canvas>
-    </>
-  )
+    return (
+        <>
+          <canvas width="200" height="200" id="cycle-timer" className="canvas"></canvas>
+        </>
+    );
 }
 
 export default CycleTimer
-export {intervalIds}
+export {digitalId, elapsedTime} 
