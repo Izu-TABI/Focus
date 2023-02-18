@@ -20,9 +20,9 @@ const UserInfo = () => {
 
     return (
         <>
-            <div className="userInfo text-center">
-                Total:&nbsp;{Math.floor(time / 3600)}時間{Math.floor(time % 3600 / 60)}分 <br />
-                Today:&nbsp;{Math.floor(todayTotal / 3600)}時間{Math.floor(todayTotal % 3600 / 60)}分
+            <div className="user-info-area">
+                Today:&nbsp;{Math.floor(todayTotal / 3600)}&nbsp;時間&nbsp;{Math.floor(todayTotal % 3600 / 60)}&nbsp;分 <br />
+                Total:&nbsp;{Math.floor(time / 3600)}&nbsp;時間&nbsp;{Math.floor(time % 3600 / 60)}&nbsp;分 
 
             </div>
         </>

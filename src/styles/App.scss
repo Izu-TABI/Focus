@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 
 * {
@@ -6,9 +6,9 @@
     padding: 0;
 }
 
-.app-name-main {
+.title-main {
     font-family: 'Roboto', sans-serif;
-    font-size: 5vh;
+    font-size: 40px;
     margin-top: 5vh;
     margin-bottom: 3vh;
 }
@@ -25,9 +25,9 @@ p {
         opacity: 1;
     }
 }
-* :not(.bottom-nav){
+.main-contents-area {
     animation-name: fadeInAnimation;
-    animation-duration: 1s;
+    animation-duration: 0.8s;
     animation-timing-function: ease;
 }
 
@@ -44,4 +44,10 @@ p {
 
 .pencil-img {
     margin: 15px 0;
+}
+
+.user-info-area {
+    display: flex;
+    justify-content: center;
+
 }

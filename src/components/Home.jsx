@@ -16,18 +16,21 @@ const Home = () => {
 
   return (
     <>
+        <div className="main-contents-area">
         {
             user ? (
                 <> 
+                    <h1 className="text-center title-main">Focus</h1>
                     <Timer></Timer>
                 </>
                 ) : (
                     <>
+                        <h1 className="text-center title-main">Focus</h1>
                         <Startpage></Startpage>
                     </>
             )
         }
-        
+        </div>
         
     </>
   )

@@ -44,19 +44,21 @@ function App() {
   }
   return (
     <div>
-      <h1 className="text-center app-name-main">Focus</h1>
-      {
-        homePage ? (
-          <Home></Home>
-          ) : (
-            userPage ? (
-              <UserData></UserData>
+      
+        {
+          homePage ? (
+            <Home></Home>
             ) : (
-              <AccountSettings></AccountSettings>
-            )
-        )
+              userPage ? (
+                <UserData></UserData>
+              ) : (
+                <AccountSettings></AccountSettings>
+              )
+          )
 
-      }
+        }
+      
+      
 
       <footer className='bottom-nav'>
         <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} value={value} onChange={handleChange}>

@@ -5,7 +5,7 @@ import pencilImg from '../images/focus_pencil.png'
 const Startpage = () => {
   return (
     <>  
-        <div className="introduction text-center">
+        <div className="introduction text-center main-contents-area">
             <img src={pencilImg} alt="" className='pencil-img' />
             <p>Focusへようこそ。<br /> ”集中”をテーマに作られたアプリケーションです。<br />
             仲間同士で助け合い、高めあうことができます。
