@@ -8,30 +8,32 @@ import Button from '@mui/material/Button';
 import { changeNickname } from '../database/changeNickname';
 
 const AccountSettings = () => {
-  
+  const [handleChangeNickname, setHandleChangeNickname] = useState(false)
   const [nickName, setNickName] = useState();
   const [tmpNickName, setTmpNickName] = useState();
   const [successMsg, setSuccessMsg] = useState('');
+
   useEffect(() => {
     (async() => {
       const userRef = doc(db, 'users', auth.currentUser.uid);
       const docSnap = await getDoc(userRef); // データの取得
       setNickName(docSnap.data().nickname)
     })();
-  }, [successMsg])
+  }, [handleChangeNickname])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
     document.getElementById('input-nickname').value = '';
     const msg = await changeNickname(tmpNickName)
     setSuccessMsg(msg)
+    setHandleChangeNickname(!handleChangeNickname)
   }
 
   return (
     <>
       <div className="text-center main-contents-area">
           <h1 className="title-main">Account</h1>
-          <p>{nickName}</p>
+          <h5>{nickName}</h5>
         
 
           <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center'}} className="mx-auto"> 
