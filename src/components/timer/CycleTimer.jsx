@@ -12,22 +12,16 @@ const CycleTimer = (props) => {
     useEffect(() => {
       const  element = document.getElementById('cycle-timer')
       let context = element.getContext('2d')
-      context.beginPath();
       
-      let sita = 0
-      const id = setInterval(() => {        
+      // let sita = 0
+      // const id = setInterval(() => {        
         
-        if ( sita <= 360 && props.paused === false ) {
-          context.clearRect(0, 0, 400, 400);
-          sita += 1
-          context.moveTo(100, 100);
+        if ( props.paused === false ) {
           context.fillStyle = "red";
-          context.arc(100, 100, 100, 0 * Math.PI / 180, sita * Math.PI / 180, false);
+          context.arc(100, 100, 100, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
           context.fill();
-        } else {
-          clearInterval(id)
         }
-      }, 1)      
+      // })      
     }, [props.paused])
 
     //設定時間または開始、保存ボタンが押された場合
@@ -49,7 +43,6 @@ const CycleTimer = (props) => {
 
       // １秒ごとに更新
       digitalId = setInterval(() => {
-        context.clearRect(0, 0, 400, 400);
         let now = 0;
 
         //現在時刻
@@ -59,13 +52,8 @@ const CycleTimer = (props) => {
         elapsedTime = startTime === 0 ? 0 : Math.floor((now - startTime) / 1000) 
 
         setelapsedTimeState(elapsedTime)
-    
-        context.fillStyle = "red";
-        context.arc(100, 100, 100, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
-        context.fill();
 
         context.beginPath();
-
         context.moveTo(100, 100);
         context.fillStyle = "lightgreen";
         context.arc(100, 100, 100, 0 * Math.PI / 180, (360 / (time)) * elapsedTime * Math.PI / 180, false);
@@ -83,7 +71,7 @@ const CycleTimer = (props) => {
 
     return (
         <>
-          <canvas width="200" height="200" id="cycle-timer" className="canvas"></canvas>
+          <canvas width="200" height="200" id="cycle-timer" className="canvas mx-auto"></canvas>
         </>
     );
 }
