@@ -7,7 +7,6 @@ export default () => {
   const { width, height } = useWindowSize()
   return (
     <Confetti
-      recycle={true}
       width={width}
       height={height}
       numberOfPieces={80}

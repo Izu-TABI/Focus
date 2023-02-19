@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import Confetti from './Confetti';
+import ConfettiRecycle from './ConfettiRecycle'
 import Rewords from './Rewords';
 
 let digitalId;
@@ -54,7 +54,7 @@ const DigitalTimer = (props) => {
             </>
           ) : (
             <>
-              <Confetti></Confetti>
+              <ConfettiRecycle></ConfettiRecycle>
               <Rewords></Rewords>
               <p>合計時間<br />&nbsp;{Math.floor( (elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>  
               <p>目標時間&nbsp;<b>+</b>&nbsp;{Math.floor((elapsedTimeState - props.seconds) / 3600)}&nbsp;時間&nbsp;{Math.floor((elapsedTimeState - props.seconds) % 3600 / 60)}&nbsp;分&nbsp;{Math.floor((elapsedTimeState - props.seconds)) % 60}&nbsp;秒</p>
