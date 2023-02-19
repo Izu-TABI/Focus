@@ -47,17 +47,19 @@ const DigitalTimer = (props) => {
 
     return (
       <div id="digital-timer"><br/>
-        {
-          ((props.seconds - elapsedTimeState) > 0)? (
+        {console.log((props.seconds - elapsedTime))}
+        {  
+          (((props.seconds - elapsedTime) < 0) && (elapsedTimeState !== 0)) ? (
             <>
-              <p>残り時間<br />&nbsp;{Math.floor( (props.seconds - elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((props.seconds - elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>
-            </>
-          ) : (
-            <>
-              <ConfettiRecycle></ConfettiRecycle>
+
+<ConfettiRecycle></ConfettiRecycle>
               <Rewords></Rewords>
               <p>合計時間<br />&nbsp;{Math.floor( (elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>  
               <p>目標時間&nbsp;<b>+</b>&nbsp;{Math.floor((elapsedTimeState - props.seconds) / 3600)}&nbsp;時間&nbsp;{Math.floor((elapsedTimeState - props.seconds) % 3600 / 60)}&nbsp;分&nbsp;{Math.floor((elapsedTimeState - props.seconds)) % 60}&nbsp;秒</p>
+            </>
+          ) : (
+            <>
+              <p>残り時間<br />&nbsp;{Math.floor( (props.seconds - elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((props.seconds - elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>
             </>
           )
 

@@ -9,7 +9,8 @@ export default () => {
     <Confetti
       width={width}
       height={height}
-      numberOfPieces={80}
+      recycle={false}
+      numberOfPieces={150}
       drawShape={ctx => {
         ctx.beginPath()
         for(let i = 0; i < 22; i++) {
