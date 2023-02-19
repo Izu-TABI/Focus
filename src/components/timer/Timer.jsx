@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import CycleTimer, { intervalIds } from './CycleTimer';
 import DigitalTimer, { digitalId, elapsedTime } from './DigitalTimer';
 import Button from '@mui/material/Button';
-import { update } from '../../database/update';
+import { updateTime } from '../../database/updateTime';
 
 const Timer = () => {
   const [seconds, setSeconds] = useState('')
@@ -73,7 +73,7 @@ const Timer = () => {
     document.getElementById('start').style.display = 'block'
     document.getElementById('reset').style.display = 'none'
 
-    update(elapsedTime)
+    updateTime(elapsedTime)
     clearInterval(digitalId)
     setPaused(false)
   }

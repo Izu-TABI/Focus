@@ -9,9 +9,11 @@ export async function add() {
         const userRef = doc(db, 'users', auth.currentUser.uid)
         const data = {
             userName: auth.currentUser.displayName,
+            nickName: '未設定',
             totalTime: 0,
             todayTotal: 12,
             timestamp: "2022/11/1"
+
         }
         await setDoc(userRef, data)
     } catch (err) {
