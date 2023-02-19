@@ -48,7 +48,7 @@ const DigitalTimer = (props) => {
     return (
       <div id="digital-timer"><br/>
         {
-          (props.seconds - elapsedTimeState > 0) ? (
+          ((props.seconds - elapsedTimeState) > 0)? (
             <>
               <p>残り時間<br />&nbsp;{Math.floor( (props.seconds - elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((props.seconds - elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>
             </>
