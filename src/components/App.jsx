@@ -1,12 +1,11 @@
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/App.css'
 import '../styles/CycleTimer.css'
 import Home from './Home'
 import UserData from './UserData';
 import AccountSettings from './AccountSettings';
-import { useState } from 'react';
 
-import * as React from 'react';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';

@@ -41,9 +41,19 @@ p {
 
 .pencil-img {
   margin: 15px 0;
+  width: 45px;
+  height: 45px;
 }
 
 .user-info-area {
   display: flex;
+  justify-content: center;
+}
+
+.nickname-area {
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }/*# sourceMappingURL=App.css.map */
