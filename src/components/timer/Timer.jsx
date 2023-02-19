@@ -73,7 +73,6 @@ const Timer = () => {
     document.getElementById('start').style.display = 'block'
     document.getElementById('reset').style.display = 'none'
 
-    console.log(elapsedTime)
     update(elapsedTime)
     clearInterval(digitalId)
     setPaused(false)

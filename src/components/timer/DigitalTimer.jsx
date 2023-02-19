@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import ConfettiRecycle from './ConfettiRecycle'
 import Rewords from './Rewords';
 
 let digitalId;
@@ -47,12 +46,9 @@ const DigitalTimer = (props) => {
 
     return (
       <div id="digital-timer"><br/>
-        {console.log((props.seconds - elapsedTime))}
         {  
-          (((props.seconds - elapsedTime) < 0) && (elapsedTimeState !== 0)) ? (
+          (((props.seconds - elapsedTime) < 0)) ? (
             <>
-
-<ConfettiRecycle></ConfettiRecycle>
               <Rewords></Rewords>
               <p>合計時間<br />&nbsp;{Math.floor( (elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>  
               <p>目標時間&nbsp;<b>+</b>&nbsp;{Math.floor((elapsedTimeState - props.seconds) / 3600)}&nbsp;時間&nbsp;{Math.floor((elapsedTimeState - props.seconds) % 3600 / 60)}&nbsp;分&nbsp;{Math.floor((elapsedTimeState - props.seconds)) % 60}&nbsp;秒</p>
