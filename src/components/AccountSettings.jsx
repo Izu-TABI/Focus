@@ -34,11 +34,11 @@ const AccountSettings = () => {
       <div className="text-center main-contents-area">
           <h1 className="title-main">Account</h1>
           <h5>{nickName}</h5>
-        
-
-          <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center'}} className="mx-auto"> 
+          <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '30px'}} className="mx-auto"> 
             <small style={{color: 'black',fontSize: '10px'}}>{successMsg}</small>
           </div>
+        
+
 
           <form className="nickname-area">
             <TextField
