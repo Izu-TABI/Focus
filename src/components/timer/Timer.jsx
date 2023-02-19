@@ -3,7 +3,6 @@ import CycleTimer, { intervalIds } from './CycleTimer';
 import DigitalTimer, { digitalId, elapsedTime } from './DigitalTimer';
 import Button from '@mui/material/Button';
 import { update } from '../../database/update';
-import Confetti from './Confetti'
 
 const Timer = () => {
   const [seconds, setSeconds] = useState('')
