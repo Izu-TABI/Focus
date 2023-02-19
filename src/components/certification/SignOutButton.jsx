@@ -9,7 +9,7 @@ const SignOutButton = () => {
         window.location.reload()
     }
     return (
-        <Button variant="outlined" onClick={() => {signOut()}}>Sign out</Button>
+        <Button variant="outlined" onClick={() => {signOut()}} sx={{marginTop: '300px'}}>Sign out</Button>
     )
 }
 
