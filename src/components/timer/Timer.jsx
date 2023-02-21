@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import CycleTimer, { intervalIds } from './CycleTimer';
 import DigitalTimer, { digitalId, elapsedTime } from './DigitalTimer';
 import Button from '@mui/material/Button';
