@@ -1,8 +1,8 @@
-import { doc, getDoc, updateDoc } from 'firebase/firestore'
+import { doc, getDoc } from 'firebase/firestore'
 import { db, auth } from './firebase'
 
 
-// 読み込み時にタイムスタンプと違ったら今日の合計時間を0にする
+//databaseの情報を返す(Promiseでラップされた値)
 export async function getDatabaseInfo() {
 
      //usersのdocumentを取得

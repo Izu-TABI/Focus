@@ -13,7 +13,7 @@ export default function sendCompMsg(username, time) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                content: "**---**\n"+todayString+"\n"+"**"+username+"** さんが __**"+Math.floor((time) / 3600)+" 時間 "+Math.ceil((time) % 3600 / 60)+" 分**__ "+"作業を続けて目標を達成しました！\n**---**",
+                content: "---\n"+todayString+"\n"+"**"+username+"** さんが __**"+Math.floor((time) / 3600)+" 時間 "+Math.ceil((time) % 3600 / 60)+" 分**__ "+"作業を続けて目標を達成しました！\n---",
             })
         })
     } catch(err) {
