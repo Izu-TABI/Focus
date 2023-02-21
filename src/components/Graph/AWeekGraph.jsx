@@ -76,7 +76,7 @@ const AWeekGraph = () => {
 
     return (
       <div style={{width: '80vw', height: '300px', margin: '50px auto'} } value={render}>
-        <Bar options={options} data={data} height='550px' width='700px' style={{display: 'flex', justifyContent: 'center'}}/>
+        <Bar options={options} data={data} height='550px' width='700px' style={{margin: '0 auto'}}/>
       </div>
     );
 }
