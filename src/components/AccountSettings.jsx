@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 import SignOutButton from './certification/SignOutButton';
-import { doc , updateDoc, getDoc } from 'firebase/firestore';
-import { auth, db } from '../database/firebase';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { changeNickname } from '../database/changeNickname';
+import { getDatabaseInfo } from '../database/getDatabaseInfo';
 
 const AccountSettings = () => {
   const [handleChangeNickname, setHandleChangeNickname] = useState(false)
@@ -14,16 +13,15 @@ const AccountSettings = () => {
   const [successMsg, setSuccessMsg] = useState('');
 
   useEffect(() => {
-    (async() => {
-      const userRef = doc(db, 'users', auth.currentUser.uid);
-      const docSnap = await getDoc(userRef); // データの取得
-      setNickName(docSnap.data().nickname)
-    })();
+    getDatabaseInfo().then((data) => {
+      setNickName(data.nickname)
+    })
   }, [handleChangeNickname])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
     document.getElementById('input-nickname').value = '';
+    document.getElementById('success-alert').style.display = 'block'
     const msg = await changeNickname(tmpNickName)
     setSuccessMsg(msg)
     setHandleChangeNickname(!handleChangeNickname)
@@ -34,7 +32,7 @@ const AccountSettings = () => {
       <div className="text-center main-contents-area">
           <h1 className="title-main">Account</h1>
           <h5>{nickName}</h5>
-          <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '30px'}} className="mx-auto"> 
+          <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '30px',display: 'none'}} className="mx-auto" id='success-alert'> 
             <small style={{color: 'black',fontSize: '10px'}}>{successMsg}</small>
           </div>
         
@@ -43,7 +41,7 @@ const AccountSettings = () => {
           <form className="nickname-area">
             <TextField
               id="input-nickname"
-              label="nickname"
+              label="ニックネーム"
               placeholder={nickName}
               onKeyDown={(event) => {
                 if (event.key === 'Enter')

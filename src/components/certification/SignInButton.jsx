@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import Button from '@mui/material/Button';
+import React from 'react';
 import { signInWithPopup } from 'firebase/auth'
 import { add } from '../../database/add';
 import { auth, provider } from '../../database/firebase';
 import { db } from '../../database/firebase'; 
 import { doc, getDoc } from 'firebase/firestore'
 import GoogleButton from 'react-google-button'
-import { display } from '@mui/system';
 
 function SignInButton() {
 

@@ -2,21 +2,17 @@ import { doc, getDoc } from 'firebase/firestore'
 import { db, auth } from '../../database/firebase'
 import React, { useEffect, useState } from 'react'
 import { updateTodayTotal } from '../../database/updateTodayTotal'
+import { getDatabaseInfo } from '../../database/getDatabaseInfo'
 
 
 const UserInfo = () => {
     const [time, setTime] = useState(0)
     const [todayTotal, setTodayTotal] = useState(0)
     updateTodayTotal()
-
-    useEffect(() => {
-        const userRef = doc(db, 'users', auth.currentUser.uid) //usersのdocumentを取得
-
-        getDoc(userRef).then((docSnap) => {//情報を取得
-            setTime(docSnap.data().totalTime)
-            setTodayTotal(docSnap.data().todayTotal)
-        })
-    }, [])
+    getDatabaseInfo().then((data) => {
+        setTime(data.totalTime)
+        setTodayTotal(data.todayTotal)
+    })
 
     return (
         <>
