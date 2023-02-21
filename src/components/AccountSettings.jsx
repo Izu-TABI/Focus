@@ -51,8 +51,6 @@ const AccountSettings = () => {
             />
             <Button variant="contained" onClick={(e) => { handleSubmit(e) }} className='change-nickname'>変更</Button>
           </form>
-          
-          
           <SignOutButton></SignOutButton>
       </div>
     </>

@@ -11,11 +11,14 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
 import HomeIcon from '@mui/icons-material/Home';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import Other from './Other';
 
 function App() {
   const [accountPage, setAcoountPage] = useState(false)
   const [homePage, setHomePage] = useState(true)
   const [userPage, setUserPage] = useState(false)
+  const [otherPage, setOtherPage] = useState(false)
 
   const [value, setValue] = React.useState('recents');
   
@@ -24,22 +27,28 @@ function App() {
     setValue(newValue);
   };
 
-  const handleHomeChange = () => {
-    setHomePage(true)
-    setAcoountPage(false)
-    setUserPage(false)
-  } 
-
-  const handleAccountChange = () => {
-    setAcoountPage(true)
-    setHomePage(false)
-    setUserPage(false)
-  } 
-
-  const handleUserDataChange = () => {
-    setUserPage(true)
-    setAcoountPage(false)
-    setHomePage(false)
+  const handlePageChange = (value) => {
+    if (value === 'data') {
+      setUserPage(true)
+      setAcoountPage(false)
+      setHomePage(false)
+      setOtherPage(false)
+    } else if (value === 'other') {
+      setUserPage(false)
+      setAcoountPage(false)
+      setHomePage(false)
+      setOtherPage(true)
+    } else if (value === 'account') {
+      setAcoountPage(true)
+      setHomePage(false)
+      setUserPage(false)
+      setOtherPage(false)
+    } else if (value === 'home') {
+      setHomePage(true)
+      setAcoountPage(false)
+      setUserPage(false)
+      setOtherPage(false)
+    }
   }
   return (
     <div>
@@ -51,10 +60,13 @@ function App() {
               userPage ? (
                 <UserData></UserData>
               ) : (
-                <AccountSettings></AccountSettings>
+                otherPage ? (
+                  <Other></Other>
+                ) : (
+                  <AccountSettings></AccountSettings>
+                )
               )
           )
-
         }
       
       
@@ -64,23 +76,30 @@ function App() {
           <BottomNavigationAction
             label="Home"
             value="home"
-            onClick={handleHomeChange}
+            onClick={() => {handlePageChange('home')}}
             icon={<HomeIcon/>}
           />
 
           <BottomNavigationAction
             label="Data"
             value="data"
-            onClick={handleUserDataChange}
+            onClick={() => {handlePageChange('data')}}
             icon={<EqualizerIcon/>}
           />
 
         <BottomNavigationAction 
             label="Account" 
             value="account" 
-            onClick={handleAccountChange}
+            onClick={() => {handlePageChange('account')}}
           icon={<AccountCircleIcon/>
         } />
+
+        <BottomNavigationAction 
+            label="Other" 
+            onClick={() => {handlePageChange('other')}}
+          icon={<MoreHorizIcon/>
+        } />
+
 
 
         </BottomNavigation>
