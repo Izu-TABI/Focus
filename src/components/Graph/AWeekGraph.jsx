@@ -31,12 +31,13 @@ const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top'
+        position: 'top',
       },
       title: {
         display: true,
         text: '1週間の作業記録',
       },
+      
     },  
   };
 const labels = ['月', '火', '水', '木', '金', '土', '日'];
@@ -74,8 +75,8 @@ const AWeekGraph = () => {
     })
 
     return (
-      <div style={{width: '70%', height: '300px',margin: '40px auto'} } value={render}>
-        <Bar options={options} data={data} height={400} style={{margin: '0 auto'}}/>
+      <div style={{width: '80vw', height: '300px', margin: '50px auto'} } value={render}>
+        <Bar options={options} data={data} height='550px' width='700px' style={{display: 'flex', justifyContent: 'center'}}/>
       </div>
     );
 }
