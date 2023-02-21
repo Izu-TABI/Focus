@@ -13,15 +13,8 @@ export async function add() {
             totalTime: 0,
             todayTotal: 12,
             timestamp: "2022/11/1",
-            aWeekTotalTime: {
-                0: 0,
-                1: 0,
-                2: 0,
-                3: 0,
-                4: 0,
-                5: 0,
-                6: 0,
-            }
+            aWeekTotalTime: [0, 0, 0, 0, 0, 0, 0]
+            
         }
         await setDoc(userRef, data)
     } catch (err) {
