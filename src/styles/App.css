@@ -26,7 +26,7 @@ p {
 }
 .main-contents-area {
   animation-name: fadeInAnimation;
-  animation-duration: 0.8s;
+  animation-duration: 1s;
   animation-timing-function: ease;
 }
 
@@ -61,6 +61,10 @@ p {
 }
 .nickname-area .change-nickname {
   margin-left: 15px;
+}
+
+.user-setting-area {
+  margin-top: 50px;
 }
 
 .come-our-discord {
