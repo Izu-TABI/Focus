@@ -8,7 +8,7 @@ import { getDatabaseInfo } from '../database/getDatabaseInfo';
 
 const AccountSettings = () => {
   const [handleChangeNickname, setHandleChangeNickname] = useState(false)
-  const [nickName, setNickName] = useState();
+  const [nickName, setNickName] = useState('未設定');
   const [tmpNickName, setTmpNickName] = useState();
   const [successMsg, setSuccessMsg] = useState('');
 
