@@ -1,6 +1,7 @@
 import React from 'react'
-import Button from '@mui/material/Button';
 import { auth } from '../../database/firebase'
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 const SignOutButton = () => {
@@ -9,7 +10,7 @@ const SignOutButton = () => {
         window.location.reload()
     }
     return (
-        <Button variant="outlined" onClick={() => {signOut()}}>Sign out</Button>
+        <div onClick={() => {signOut()}} style={{fontSize: '20px', borderBottom: '1.5px solid #555555', width: '140px', height: '40px', margin: '0 auto'}} className='signout-btn'><LogoutIcon sx={{width: '30px', height: '30px'}}></LogoutIcon>&nbsp;&nbsp;Sign out</div>
     )
 }
 

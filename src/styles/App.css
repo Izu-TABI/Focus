@@ -5,10 +5,22 @@
   padding: 0;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.all-pages, html {
+  background-color: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  color: #5e5d5d;
+}
+
 .title-main {
   font-family: "Roboto", sans-serif;
   font-size: 40px;
-  margin-top: 5vh;
+  padding-top: 5vh;
   margin-bottom: 3vh;
 }
 
@@ -51,7 +63,14 @@ p {
   justify-content: center;
 }
 
-.nickname-area {
+.user-setting-area {
+  height: 100vh;
+  padding-top: 50px;
+  position: relative;
+  text-align: center;
+}
+.user-setting-area .nickname-area {
+  margin: 0 auto;
   margin-top: 20px;
   height: 100px;
   width: 100vw;
@@ -59,12 +78,15 @@ p {
   align-items: center;
   justify-content: center;
 }
-.nickname-area .change-nickname {
+.user-setting-area .nickname-area .change-nickname {
   margin-left: 15px;
 }
-
-.user-setting-area {
-  margin-top: 50px;
+.user-setting-area .signout-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 100px;
 }
 
 .come-our-discord {

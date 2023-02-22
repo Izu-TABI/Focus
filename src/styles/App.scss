@@ -1,15 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
+$bgcolor: #ffffff;
+
 
 * {
     margin: 0;
     padding: 0;
 }
 
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.all-pages, html {
+    background-color: $bgcolor;
+    width: 100vw;
+    height: 100vh;
+    color: #5e5d5d;
+}
+
 .title-main {
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
-    margin-top: 5vh;
+    padding-top: 5vh;
     margin-bottom: 3vh;
 }
 
@@ -51,24 +65,41 @@ p {
 .user-info-area {
     display: flex;
     justify-content: center;
-
 }
 
-.nickname-area {
-    margin-top: 20px;
-    height: 100px;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    .change-nickname {
-        margin-left: 15px;
-    }
-}
+
+
 
 .user-setting-area {
-    margin-top: 50px;
+    height: 100vh;
+    padding-top: 50px;
+
+    position: relative;
+    text-align: center;
+    
+    .nickname-area {
+        margin: 0 auto;
+        margin-top: 20px;
+        height: 100px;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        .change-nickname {
+            margin-left: 15px;
+        }
+    }
+
+    .signout-btn {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        bottom: 100px;
+    }
 }
 
 .come-our-discord {

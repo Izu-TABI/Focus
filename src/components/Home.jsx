@@ -20,12 +20,10 @@ const Home = () => {
         {
             user ? (
                 <> 
-                    <h1 className="text-center title-main">Focus</h1>
                     <Timer></Timer>
                 </>
                 ) : (
                     <>
-                        <h1 className="text-center title-main">Focus</h1>
                         <Startpage></Startpage>
                     </>
             )

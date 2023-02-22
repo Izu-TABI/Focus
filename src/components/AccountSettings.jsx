@@ -29,7 +29,7 @@ const AccountSettings = () => {
 
   return (
     <>
-      <div className="text-center main-contents-area user-setting-area">
+      <div className="main-contents-area user-setting-area">
           <h4>{nickName}</h4>
           <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '30px',display: 'none'}} className="mx-auto" id='success-alert'> 
             <small style={{color: 'black',fontSize: '10px'}}>{successMsg}</small>
@@ -49,7 +49,7 @@ const AccountSettings = () => {
               }}
               onChange={(e) => { setTmpNickName(e.target.value); }}
             />
-            <Button variant="contained" onClick={(e) => { handleSubmit(e) }} className='change-nickname' sx={{height: '50px', width: '10px'}}>変更</Button>
+            <Button variant="contained" onClick={(e) => { handleSubmit(e) }} className='change-nickname' sx={{height: '50px', width: '10px', backgroundColor: '#1C9BF0'}}>変更</Button> 
           </form>
           <SignOutButton></SignOutButton>
       </div>
