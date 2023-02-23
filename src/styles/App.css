@@ -64,7 +64,7 @@ p {
 }
 
 .user-setting-area {
-  height: 100vh;
+  height: calc(100% - 8vh);
   padding-top: 50px;
   position: relative;
   text-align: center;
@@ -86,7 +86,7 @@ p {
   left: 0;
   right: 0;
   margin: auto;
-  bottom: 100px;
+  bottom: 80px;
 }
 
 .come-our-discord {

@@ -17,7 +17,7 @@ const CycleTimer = (props) => {
       // const id = setInterval(() => {        
         
         if ( props.paused === false ) {
-          context.fillStyle = "red";
+          context.fillStyle = "#e62e2e";
           context.arc(100, 100, 100, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
           context.fill();
         }
