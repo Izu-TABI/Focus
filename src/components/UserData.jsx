@@ -9,6 +9,7 @@ const UserData = () => {
             <div className="main-contents-area">
                 <h1 className='title-main text-center'>Data</h1>
                 <UserInfo></UserInfo>
+                <AWeekGraph></AWeekGraph>
             </div>
         </>
     )
