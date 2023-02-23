@@ -58,11 +58,6 @@ p {
   height: 45px;
 }
 
-.user-info-area {
-  display: flex;
-  justify-content: center;
-}
-
 .user-setting-area {
   height: calc(100% - 8vh);
   padding-top: 50px;
