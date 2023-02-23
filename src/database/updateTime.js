@@ -14,7 +14,7 @@ export async function updateTime(time) {
             totalTime = data.totalTime
             todayTotal = data.todayTotal
         }).then(() => {
-            weekTimes[day] = weekTimes[day] + time
+            weekTimes[day - 1] = weekTimes[day - 1] + time
         }).then(async() => {
             
             const data = {
