@@ -11,7 +11,7 @@ html {
 }
 
 .all-pages, html {
-  background-color: #ffffff;
+  background-color: white;
   width: 100vw;
   height: 100vh;
   color: #5e5d5d;
@@ -63,6 +63,11 @@ p {
   justify-content: center;
 }
 
+@media screen and (max-width: 600px) {
+  #bottom-nav {
+    height: 80px;
+  }
+}
 .user-setting-area {
   height: calc(100% - 8vh);
   padding-top: 50px;

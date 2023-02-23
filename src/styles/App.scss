@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
-
-$bgcolor: #ffffff;
-
-
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +10,7 @@ html {
 }
 
 .all-pages, html {
-    background-color: $bgcolor;
+    background-color: #ffff;
     width: 100vw;
     height: 100vh;
     color: #5e5d5d;
@@ -68,6 +64,11 @@ p {
 }
 
 
+@media screen and (max-width: 600px) {
+    #bottom-nav {
+        height: 80px;
+    }    
+}
 
 
 

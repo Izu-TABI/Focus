@@ -72,7 +72,7 @@ function App() {
       
 
       <footer className='bottom-nav'>
-        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 , backgroundColor: '#f5f5f5'}} value={value} onChange={handleChange}>
+        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 , backgroundColor: '#f5f5f5'}} value={value} onChange={handleChange} id="bottom-nav">
           <BottomNavigationAction
             label="Home"
             value="home"
