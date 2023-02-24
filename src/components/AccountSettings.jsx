@@ -29,7 +29,7 @@ const AccountSettings = () => {
 
   return (
     <>
-      <div className="main-contents-area user-setting-area">
+      <div className="main-contents-area user-setting-area"  style={{overflow: 'hidden'}}>
           <h4>{nickName}</h4>
           <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '30px',display: 'none'}} className="mx-auto" id='success-alert'> 
             <small style={{color: 'black',fontSize: '10px'}}>{successMsg}</small>

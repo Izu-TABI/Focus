@@ -81,6 +81,7 @@ const Timer = () => {
   
   return (
     <>
+    <div style={{overflow: 'hidden'}}>
       <h1 className="text-center title-main">Focus</h1>
       <div className="text-center">
         <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
@@ -99,6 +100,7 @@ const Timer = () => {
         <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
         <Button variant="contained" onClick={() => {handleReset()}} id='reset' className="mx-auto" style={{display: 'none'}} sx={{backgroundColor: '#1C9BF0'}}>保存</Button>
         <Button variant="contained" type="submit" onClick={(e) => {handleSubmit(e)}} id='start' className="mx-auto" sx={{backgroundColor: '#1C9BF0'}}>開始</Button>
+      </div>
       </div>
     </>
   )    
