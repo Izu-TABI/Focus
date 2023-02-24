@@ -12,7 +12,7 @@ const Home = () => {
         } else {
             document.querySelector('.bottom-nav').style.display = 'block'
         }
-    }) 
+    }, [user]) 
 
   return (
     <>
