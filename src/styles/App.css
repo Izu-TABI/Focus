@@ -96,12 +96,11 @@ p {
 
 .come-our-discord {
   position: relative;
-  margin: 100px auto 100px auto;
+  margin: 100px auto 30px auto;
   padding: 1.2em;
   color: #555555; /* 文章色 */
   background-color: #fff; /* 背景色 */
   border-top: 1px solid #555555; /* 枠線の太さ・色 */
-  border-bottom: 1px solid #555555; /* 枠線の太さ・色 */
   width: 200px;
 }
 .come-our-discord .dicord-title {
@@ -110,4 +109,11 @@ p {
   padding: 0 0.5em;
   font-weight: bold;
   background-color: #fff;
+}
+
+.about-discord h6 {
+  font-weight: bold;
+}
+.about-discord li {
+  list-style: none;
 }/*# sourceMappingURL=App.css.map */
