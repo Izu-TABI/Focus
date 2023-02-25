@@ -101,7 +101,7 @@ p {
   color: #555555; /* 文章色 */
   background-color: #fff; /* 背景色 */
   border-top: 1px solid #555555; /* 枠線の太さ・色 */
-  width: 200px;
+  max-width: 85vw;
 }
 .come-our-discord .dicord-title {
   position: absolute;
@@ -122,7 +122,7 @@ p {
   color: #555555; /* 文章色 */
   background-color: #fff; /* 背景色 */
   border-top: 1px solid #555555; /* 枠線の太さ・色 */
-  max-width: 80vw;
+  max-width: 85vw;
 }
 .recomend-area .recomend-title {
   text-align: center;
@@ -146,8 +146,8 @@ p {
   color: #555555; /* 文章色 */
   background-color: #fff; /* 背景色 */
   border-top: 1px solid #555555; /* 枠線の太さ・色 */
-  height: 200px;
-  max-width: 80vw;
+  height: 300px;
+  max-width: 85vw;
 }
 .feedback-area .feedback-title {
   text-align: center;
