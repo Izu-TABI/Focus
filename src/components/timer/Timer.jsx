@@ -35,7 +35,8 @@ const Timer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    document.getElementById('custom-form-area').style.display = 'none'
+
+    document.getElementById('select-form-area').style.display = 'none'
 
     document.getElementById('input-hours').value = ''
     document.getElementById('input-minutes').value = ''
@@ -64,6 +65,8 @@ const Timer = () => {
   }
 
   const handleReset = () => {
+    document.getElementById('select-form-area').style.display = 'block'
+    document.getElementById('custom-form-area').style.display = 'none'
     
     document.getElementById('input-hours').style.display = 'block'
     document.getElementById('input-minutes').style.display = 'block'
@@ -90,6 +93,7 @@ const Timer = () => {
     setSelect(e.target.value)
     if (e.target.value === 'custom') {
       document.getElementById('custom-form-area').style.display = 'block'
+      document.getElementById('select-form-area').style.display = 'none'
     } else {
       document.getElementById('custom-form-area').style.display = 'none'
       setMinutesTemp(e.target.value) 
@@ -104,23 +108,23 @@ const Timer = () => {
         <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
       </div>
 
-      <div style={{textAlign:'center'}}>
-        <FormControl sx={{ m: 2, minWidth: 200 }}>
-        <InputLabel id="demo-simple-select-autowidth-label" sx={{color: 'gray'}}>作業時間</InputLabel>
-        <Select
-          labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select-autowidth"
-          value={select}
-          onChange={(e) => handleSelectChange(e)}
-          label='作業時間'
-        >
-        <MenuItem value={5}>5分</MenuItem>
-        <MenuItem value={30}>30分</MenuItem>
-        <MenuItem value={60}>60分</MenuItem>
-        <MenuItem value={90}>90分</MenuItem>
-        <MenuItem value="custom">カスタム</MenuItem>
-        </Select>
-      </FormControl>
+      <div style={{textAlign:'center'}} id='select-form-area'>
+        <FormControl sx={{ m: 2, minWidth: 180 }}>
+          <InputLabel id="demo-simple-select-autowidth-label" sx={{color: 'gray'}}>作業時間</InputLabel>
+          <Select
+            labelId="demo-simple-select-autowidth-label"
+            id="demo-simple-select-autowidth"
+            value={select}
+            onChange={(e) => handleSelectChange(e)}
+            label='作業時間'
+          >
+            <MenuItem value={5}>5分</MenuItem>
+            <MenuItem value={30}>30分</MenuItem>
+            <MenuItem value={60}>60分</MenuItem>
+            <MenuItem value={90}>90分</MenuItem>
+            <MenuItem value="custom">カスタム</MenuItem>
+          </Select>
+        </FormControl>
       </div>
           <form className='form-area' id='custom-form-area' style={{display: 'none'}}>
             <div>
