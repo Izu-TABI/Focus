@@ -67,7 +67,7 @@ p {
 @media screen and (max-width: 600px) {
     #bottom-nav {
         height: 80px;
-    }    
+    }
 }
 
 
@@ -75,18 +75,16 @@ p {
 .user-setting-area {
     height: calc(100% - 8vh);
     padding-top: 50px;
-
-    position: relative;
     text-align: center;
 
     h4 {
+        font-size: 25px;
         margin-top: 30px;
         font-weight: bold;
     }
     
     .nickname-area {
         margin: 0 auto;
-        margin-top: 50px;
         height: 100px;
         width: 100vw;
         display: flex;
@@ -101,7 +99,7 @@ p {
 
     .check-discord {
         width: 100vw;
-        margin-top: 30px;
+        margin-top: 10px;
         float: left;   
         display: flex;
         justify-content: center;
@@ -110,14 +108,15 @@ p {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 250px;
-            border-radius: 20px;
+            max-width: 80vw;
+            width: 280px;
+            border-radius: 4px;
             
             
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
             .text {
                 padding: 15px 0;
-                font-size: 12px;
+                font-size: 14px;
                 color: black;
                 margin-right: 20px;
             }   
@@ -126,12 +125,9 @@ p {
     }
 
     .signout-btn {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-
-        bottom: 20vh;
+        position: relative;
+        text-align: center;
+        margin-top: 38vh;
     }
 }
 

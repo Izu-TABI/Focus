@@ -51,13 +51,15 @@ const AccountSettings = () => {
     <>
       <div className="main-contents-area user-setting-area"  style={{overflow: 'hidden'}}>
           <h4>{nickName}</h4>
-          <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '30px',display: 'none'}} className="mx-auto" id='success-alert'> 
-            <small style={{color: 'black',fontSize: '10px'}}>{successMsg}</small>
+          <div style={{ height: '50px', display: 'flex', alignItems: 'center' }}>
+            <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', display: 'none'}} className="mx-auto" id='success-alert'> 
+              <small style={{color: 'black',fontSize: '10px'}}>{successMsg}</small>
+            </div>
           </div>
 
           <form className="nickname-area">
             <TextField
-              sx={{width: '150px'}}
+              sx={{width: '200px'}}
               id="input-nickname"
               label="ニックネーム"
               placeholder={nickName}
@@ -79,7 +81,10 @@ const AccountSettings = () => {
                 /> 
               </div>
           </div>
-          <SignOutButton></SignOutButton>
+
+          <div className='signout-btn'>
+            <SignOutButton></SignOutButton>
+          </div>
       </div>
     </>
   )

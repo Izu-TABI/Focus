@@ -10,7 +10,7 @@ const SignOutButton = () => {
         window.location.reload()
     }
     return (
-        <div onClick={() => {signOut()}} style={{fontSize: '20px', borderBottom: '1.5px solid #555555', width: '140px', height: '40px', margin: '0 auto'}} className='signout-btn'><LogoutIcon sx={{width: '30px', height: '30px'}}></LogoutIcon>&nbsp;&nbsp;Sign out</div>
+        <div onClick={() => {signOut()}} style={{fontSize: '20px', borderBottom: '1.5px solid #555555', width: '140px', height: '40px', margin: '0 auto'}}><LogoutIcon sx={{width: '30px', height: '30px'}}></LogoutIcon>&nbsp;&nbsp;Sign out</div>
     )
 }
 
