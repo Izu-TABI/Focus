@@ -13,8 +13,8 @@ export async function add() {
             totalTime: 0,
             todayTotal: 12,
             timestamp: "2022/11/1",
-            aWeekTotalTime: [0, 0, 0, 0, 0, 0, 0]
-            
+            aWeekTotalTime: [0, 0, 0, 0, 0, 0, 0],
+            discordSendBool: false,
         }
         await setDoc(userRef, data)
     } catch (err) {

@@ -3,21 +3,33 @@ import React, { useEffect, useState } from 'react';
 import SignOutButton from './certification/SignOutButton';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Switch from '@mui/material/Switch';
 import { changeNickname } from '../database/changeNickname';
 import { getDatabaseInfo } from '../database/getDatabaseInfo';
+import { updateSendDiscord } from '../database/updateSendDiscord';
+import { Tune } from '@mui/icons-material';
 
 const AccountSettings = () => {
   const [handleChangeNickname, setHandleChangeNickname] = useState(false)
+  const [changeDiscord, setChangeDiscord] = useState(false)
   const [nickName, setNickName] = useState('未設定');
   const [tmpNickName, setTmpNickName] = useState();
   const [successMsg, setSuccessMsg] = useState('');
-
+  const [sendDiscord, setSendDiscord] = useState(false);
+  
+  getDatabaseInfo().then((data) => {
+    setSendDiscord(data.discordSendBool);
+  }, [changeDiscord])
+  //ニックネームが更新されたら
   useEffect(() => {
     getDatabaseInfo().then((data) => {
       setNickName(data.nickname)
     })
   }, [handleChangeNickname])
-
+  
+  
+  
+  // ニックネーム　更新ボタンが押されたら
   const handleSubmit = async(e) => {
     e.preventDefault();
     document.getElementById('input-nickname').value = '';
@@ -26,7 +38,15 @@ const AccountSettings = () => {
     setSuccessMsg(msg)
     setHandleChangeNickname(!handleChangeNickname)
   }
-
+  
+  // discordのチェックボックスが更新されたら
+  const handleChangeDiscord = async(e) => {
+    document.getElementById('success-alert').style.display = 'block'
+    const msg = await updateSendDiscord(e.target.checked);
+    setSuccessMsg(msg)
+    setChangeDiscord(!changeDiscord)
+  }
+  
   return (
     <>
       <div className="main-contents-area user-setting-area"  style={{overflow: 'hidden'}}>
@@ -34,8 +54,6 @@ const AccountSettings = () => {
           <div style={{backgroundColor: '#f1f8e9', width: '150px', height: '30px', borderRadius: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '30px',display: 'none'}} className="mx-auto" id='success-alert'> 
             <small style={{color: 'black',fontSize: '10px'}}>{successMsg}</small>
           </div>
-        
-
 
           <form className="nickname-area">
             <TextField
@@ -51,6 +69,13 @@ const AccountSettings = () => {
             />
             <Button variant="contained" onClick={(e) => { handleSubmit(e) }} className='change-nickname' sx={{height: '50px', width: '10px', backgroundColor: '#1C9BF0'}}>変更</Button> 
           </form>
+          <div>
+            <Switch
+              checked={sendDiscord}
+              onChange={(e) => {handleChangeDiscord(e)}}
+              inputProps={{ 'aria-label': 'controlled' }}
+            /> 
+          </div>
           <SignOutButton></SignOutButton>
       </div>
     </>
