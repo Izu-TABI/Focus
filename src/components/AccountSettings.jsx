@@ -69,12 +69,15 @@ const AccountSettings = () => {
             />
             <Button variant="contained" onClick={(e) => { handleSubmit(e) }} className='change-nickname' sx={{height: '50px', width: '10px', backgroundColor: '#1C9BF0'}}>変更</Button> 
           </form>
-          <div>
-            <Switch
-              checked={sendDiscord}
-              onChange={(e) => {handleChangeDiscord(e)}}
-              inputProps={{ 'aria-label': 'controlled' }}
-            /> 
+          <div className='check-discord'>
+              <div className='check-discord-contens'>
+              <span className='text'>作業時間をDiscordへ送信</span>
+                <Switch
+                  checked={sendDiscord}
+                  onChange={(e) => {handleChangeDiscord(e)}}
+                  inputProps={{ 'aria-label': 'controlled' }}
+                /> 
+              </div>
           </div>
           <SignOutButton></SignOutButton>
       </div>

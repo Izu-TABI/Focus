@@ -78,10 +78,15 @@ p {
 
     position: relative;
     text-align: center;
+
+    h4 {
+        margin-top: 30px;
+        font-weight: bold;
+    }
     
     .nickname-area {
         margin: 0 auto;
-        margin-top: 20px;
+        margin-top: 50px;
         height: 100px;
         width: 100vw;
         display: flex;
@@ -91,6 +96,33 @@ p {
         .change-nickname {
             margin-left: 15px;
         }
+    }
+
+
+    .check-discord {
+        width: 100vw;
+        margin-top: 30px;
+        float: left;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .check-discord-contens {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            border-radius: 20px;
+            
+            
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
+            .text {
+                padding: 15px 0;
+                font-size: 12px;
+                color: black;
+                margin-right: 20px;
+            }   
+        }
+
     }
 
     .signout-btn {
@@ -174,3 +206,4 @@ p {
         background-color: #fff;
     }
 }
+
