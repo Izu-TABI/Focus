@@ -1,6 +1,6 @@
-import { doc, getDoc, updateDoc } from 'firebase/firestore'
-import { db, auth } from './firebase'
-import { getDatabaseInfo } from './getDatabaseInfo'
+import { doc, updateDoc } from 'firebase/firestore';
+import { db, auth } from './firebase';
+import { getDatabaseInfo } from './getDatabaseInfo';
 
 
 
@@ -8,14 +8,13 @@ import { getDatabaseInfo } from './getDatabaseInfo'
 export async function updateTodayTotal() {
 
      //usersのdocumentを取得
-    const userRef = doc(db, 'users', auth.currentUser.uid)
+    const userRef = doc(db, 'users', auth.currentUser.uid);
 
     // 日付を取得
-    let date = new Date()
-    let todayString = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate()
-    let weekArray = []
-    const today = (date.getDay()) - 1
-
+    let date = new Date();
+    let todayString = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate();
+    let weekArray = [];
+    const today = (date.getDay()) - 1;
 
 
     getDatabaseInfo().then(async(database) => {
@@ -24,7 +23,7 @@ export async function updateTodayTotal() {
         if (database.timestamp !== todayString) {
             weekArray = await database.aWeekTotalTime;
             for (let i = today; i < 7; i++) {
-                if (weekArray[i]) {
+                if (weekArray[i] !== 0) {
                     weekArray[i] = 0;
                 }
             }
