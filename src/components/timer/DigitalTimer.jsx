@@ -41,7 +41,7 @@ const DigitalTimer = (props) => {
 
           if (((props.seconds - elapsedTime) < 0) && props.seconds !== 0) {
             getDatabaseInfo().then((data) => {
-              sendCmpMsg(data.nickname, elapsedTime)
+              sendCmpMsg(data.nickname, elapsedTime, data.discordSendBool)
             })
           }
 
