@@ -28,7 +28,7 @@ const Other = () => {
 
         <div className="feedback-area text-center">
           <span className="feedback-title">フィードバック</span><br />
-          <p>不具合やご意見などは<a href="mailto:izutabi14@gmail.com">izutabi14@gmail.com</a>へよろしくお願い致します。</p>
+          <p>不具合やご意見などは<a href="mailto:izutabi14@gmail.com">izutabi14@gmail.com</a>へ宜しくお願い致します。</p>
         </div>
         <div style={{position: 'relative', display: 'flex', justifyContent: 'center'}}>
         <small style={{color: 'gray', fontSize: '10px',position: 'absolute', bottom: '0', marginBottom: '80px'}}>Copyright © 2023 Izu-TABI All rights reserved.</small>
