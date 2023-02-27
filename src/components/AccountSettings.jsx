@@ -74,11 +74,14 @@ const AccountSettings = () => {
           <div className='check-discord'>
               <div className='check-discord-contens'>
               <span className='text'>作業時間をDiscordへ送信</span>
+                
+              <div className="check-box-area">
                 <Switch
-                  checked={sendDiscord}
-                  onChange={(e) => {handleChangeDiscord(e)}}
-                  inputProps={{ 'aria-label': 'controlled' }}
+                    checked={sendDiscord}
+                    onChange={(e) => {handleChangeDiscord(e)}}
+                    inputProps={{ 'aria-label': 'controlled' }}
                 /> 
+              </div>
               </div>
           </div>
 
