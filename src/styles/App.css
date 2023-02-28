@@ -105,14 +105,14 @@ p {
   align-items: center;
   max-width: 80vw;
   width: 279px;
-  height: 55px;
+  height: 60px;
   border-bottom: 1px solid #d2cece;
   border-top: 1px solid #d2cece;
 }
 .user-setting-area .check-discord .check-discord-contens .text {
   position: absolute;
-  font-size: 14px;
-  color: black;
+  font-size: 16px;
+  color: #555555;
   left: 12px;
 }
 .user-setting-area .check-discord .check-discord-contens .check-box-area {
