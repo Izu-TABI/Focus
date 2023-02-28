@@ -8,8 +8,9 @@ const Startpage = () => {
         <h1 className="text-center title-main">Focus</h1>
         <div className="introduction text-center main-contents-area">
             <img src={pencilImg} alt="" className='pencil-img' />
-            <p>Focusへようこそ。<br /> ”集中”をテーマに作られたアプリケーションです。<br /></p>
-            <p>作業を始めるハードルを下げ、継続できるような仕組みを取り入れました。</p>
+            <p>Focusへようこそ。<br /><br /> ”集中”をテーマに作られたアプリケーションです。<br /><br />
+            作業を始めるハードルを下げ、継続できるような仕組みを取り入れました。</p><br /><br />
+            <p> Focusについてさらに詳しく知りたい方は<a href="">こちら</a>をご覧ください。</p><br /><br />
             <p>サインインして作業を始めましょう。</p>
         </div>
         <SignInButton></SignInButton>
