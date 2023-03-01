@@ -68,6 +68,19 @@ p {
     #bottom-nav {
         height: 80px;
     }
+    .css-1trux4f-MuiBottomNavigation-root {
+        padding-bottom: 10px;
+    }
+
+    .css-118p9r0-MuiButtonBase-root-MuiBottomNavigationAction-root {
+        justify-content: flex-start !important;
+        padding-top: 5px !important;
+    }
+
+    .css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root { //action
+        justify-content: flex-start !important;
+        padding-top: 5px !important;
+    }
 }
 
 
