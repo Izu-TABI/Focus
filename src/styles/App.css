@@ -70,13 +70,16 @@ p {
   .css-1trux4f-MuiBottomNavigation-root {
     padding-bottom: 10px;
   }
-  .css-118p9r0-MuiButtonBase-root-MuiBottomNavigationAction-root {
+  .css-118p9r0-MuiButtonBase-root-MuiBottomNavigationAction-root, .css-1m0fn3j-MuiButtonBase-root-MuiBottomNavigationAction-root, .css-1so5viv {
     justify-content: flex-start !important;
-    padding-top: 5px !important;
+    padding-top: 10px !important;
   }
-  .css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root {
+  .css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root, .css-sxw2zh {
     justify-content: flex-start !important;
-    padding-top: 5px !important;
+    padding-top: 10px !important;
+  }
+  .MuiBottomNavigationAction-label {
+    font-size: 0.73em !important;
   }
 }
 .user-setting-area {
