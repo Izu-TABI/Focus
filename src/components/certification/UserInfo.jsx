@@ -21,9 +21,11 @@ const UserInfo = () => {
 
     return (
         <>
-            <div className="user-info-area" style={{marginTop: '30px'}}>
-                今日:&nbsp;{Math.floor(todayTotal / 3600)}&nbsp;時間&nbsp;{Math.floor(todayTotal % 3600 / 60)}&nbsp;分 <br />
-                合計:&nbsp;{Math.floor(time / 3600)}&nbsp;時間&nbsp;{Math.floor(time % 3600 / 60)}&nbsp;分 
+            <div className="user-info-area">
+                <p>
+                <span>今日:</span>&nbsp;{Math.floor(todayTotal / 3600)}&nbsp;時間&nbsp;{Math.floor(todayTotal % 3600 / 60)}&nbsp;分 <br />
+                <span>合計:</span>&nbsp;{Math.floor(time / 3600)}&nbsp;時間&nbsp;{Math.floor(time % 3600 / 60)}&nbsp;分 
+                </p>
             </div>
         </>
     )

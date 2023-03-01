@@ -18,9 +18,8 @@ html {
 
 .title-main {
     font-family: 'Roboto', sans-serif;
-    font-size: 40px;
+    font-size: 45px;
     padding-top: 5vh;
-    margin-bottom: 3vh;
 }
 
 p {
@@ -59,8 +58,13 @@ p {
 }
 
 .user-info-area {
+    // margin-top: 3vh;
+    // margin-bottom: 10vh;
     display: flex;
     justify-content: center;
+    span {
+        font-weight: bold;
+    }
 }
 
 
