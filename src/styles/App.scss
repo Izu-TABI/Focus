@@ -58,8 +58,6 @@ p {
 }
 
 .user-info-area {
-    // margin-top: 3vh;
-    // margin-bottom: 10vh;
     display: flex;
     justify-content: center;
     span {
@@ -68,11 +66,30 @@ p {
 }
 
 
+.side-nav {
+    display: block;
+    display: flex;
+}
+
+.bottom-nav footer {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
+    // switch nav type
+    .side-nav {
+        display: none !important;
+    }
+
+    .bottom-nav footer {
+        display: block !important;
+    }
     
     #bottom-nav {
         height: 80px;
     }
+
+    // bottom-nav
     .css-1trux4f-MuiBottomNavigation-root {
         padding-bottom: 10px;
     }

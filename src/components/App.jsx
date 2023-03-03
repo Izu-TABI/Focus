@@ -14,6 +14,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Other from './Other';
 
+import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+
+
 function App() {
   const [accountPage, setAcoountPage] = useState(false)
   const [homePage, setHomePage] = useState(true)
@@ -51,67 +54,84 @@ function App() {
     }
   }
   return (
-    <div className="all-pages">
-      
-        {
-          homePage ? (
-            <Home></Home>
-            ) : (
-              userPage ? (
-                <UserData></UserData>
-              ) : (
-                otherPage ? (
-                  <Other></Other>
+    <>
+
+        <div>
+            
+          <div className="all-pages">    
+          <div className="side-nav" style={{position: 'relative'}}>
+
+          <Sidebar style={{position: 'absolute'}}>
+  <Menu>
+    <SubMenu label="Charts">
+      <MenuItem> Pie charts </MenuItem>
+      <MenuItem> Line charts </MenuItem>
+    </SubMenu>
+    <MenuItem> Documentation </MenuItem>
+    <MenuItem> Calendar </MenuItem>
+  </Menu>
+</Sidebar>
+          </div>
+            {
+              homePage ? (
+                <Home></Home>
                 ) : (
-                  <AccountSettings></AccountSettings>
-                )
+                  userPage ? (
+                    <UserData></UserData>
+                  ) : (
+                    otherPage ? (
+                      <Other></Other>
+                    ) : (
+                      <AccountSettings></AccountSettings>
+                    )
+                  )
               )
-          )
-        }
-      
-      
+            }
+          </div>
+          <div className='bottom-nav'>
+            <footer>
+              <BottomNavigation  
+                sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 , backgroundColor: '#f5f5f5'}} 
+          
+                value={value} 
+                onChange={handleChange} 
+                id="bottom-nav"
+                showLabels
+                >
+                <BottomNavigationAction
+                  label="Home"
+                  value="home"
+                  onClick={() => {handlePageChange('home')}}
+                  icon={<HomeIcon/>}
+                />
 
-      <footer className='bottom-nav'>
-        <BottomNavigation  
-          sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 , backgroundColor: '#f5f5f5'}} 
-    
-          value={value} 
-          onChange={handleChange} 
-          id="bottom-nav"
-          showLabels
-          >
-          <BottomNavigationAction
-            label="Home"
-            value="home"
-            onClick={() => {handlePageChange('home')}}
-            icon={<HomeIcon/>}
-          />
+                <BottomNavigationAction
+                  label="Data"
+                  value="data"
+                  onClick={() => {handlePageChange('data')}}
+                  icon={<EqualizerIcon/>}
+                />
 
-          <BottomNavigationAction
-            label="Data"
-            value="data"
-            onClick={() => {handlePageChange('data')}}
-            icon={<EqualizerIcon/>}
-          />
+              <BottomNavigationAction 
+                  label="Account" 
+                  value="account" 
+                  onClick={() => {handlePageChange('account')}}
+                icon={<AccountCircleIcon/>
+              } />
 
-        <BottomNavigationAction 
-            label="Account" 
-            value="account" 
-            onClick={() => {handlePageChange('account')}}
-          icon={<AccountCircleIcon/>
-        } />
-
-        <BottomNavigationAction 
-            label="Other" 
-            onClick={() => {handlePageChange('other')}}
-          icon={<MoreHorizIcon/>
-        } />
+              <BottomNavigationAction 
+                  label="Other" 
+                  onClick={() => {handlePageChange('other')}}
+                icon={<MoreHorizIcon/>
+              } />
 
 
 
-        </BottomNavigation>
-      </footer>
-    </div>
+              </BottomNavigation>
+            </footer>
+            </div>
+        </div>
+        </>
   );
 }
 

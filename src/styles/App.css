@@ -65,7 +65,22 @@ p {
   font-weight: bold;
 }
 
+.side-nav {
+  display: block;
+  display: flex;
+}
+
+.bottom-nav footer {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
+  .side-nav {
+    display: none !important;
+  }
+  .bottom-nav footer {
+    display: block !important;
+  }
   #bottom-nav {
     height: 80px;
   }

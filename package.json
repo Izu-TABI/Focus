@@ -26,6 +26,7 @@
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
     "react-google-button": "^0.7.2",
+    "react-pro-sidebar": "^1.0.0",
     "react-rewards": "^2.0.4",
     "react-scripts": "5.0.1",
     "react-use": "^17.4.0",
