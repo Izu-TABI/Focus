@@ -59,18 +59,35 @@ function App() {
         <div>
             
           <div className="all-pages">    
-          <div className="side-nav" style={{position: 'relative'}}>
+          <div className="side-nav" style={{position: 'absolute', top: '60px', left: '10px'}}>
 
-          <Sidebar style={{position: 'absolute'}}>
-  <Menu>
-    <SubMenu label="Charts">
-      <MenuItem> Pie charts </MenuItem>
-      <MenuItem> Line charts </MenuItem>
-    </SubMenu>
-    <MenuItem> Documentation </MenuItem>
-    <MenuItem> Calendar </MenuItem>
-  </Menu>
-</Sidebar>
+          <Sidebar>
+          <Menu id='side-menu'>
+              <h4 style={{textAlign: 'center', padding: '10px 0',margin: '0', backgroundColor: '#1C9BF0', color: 'white'}}>Focus</h4>
+            {/* <SubMenu label="Charts">
+              <MenuItem
+                
+              > Pie charts </MenuItem>
+              <MenuItem> Line charts </MenuItem>
+            </SubMenu> */}
+
+            <MenuItem
+              onClick={() => {handlePageChange('home')}}
+            > Home </MenuItem>
+
+            <MenuItem
+              onClick={() => {handlePageChange('data')}}
+            > Data </MenuItem>
+
+            <MenuItem
+              onClick={() => {handlePageChange('account')}}
+            > Account </MenuItem>
+
+            <MenuItem
+              onClick={() => {handlePageChange('other')}}
+            > Other </MenuItem>
+          </Menu>
+        </Sidebar>
           </div>
             {
               homePage ? (
@@ -88,6 +105,8 @@ function App() {
               )
             }
           </div>
+
+          {/* mobile */}
           <div className='bottom-nav'>
             <footer>
               <BottomNavigation  

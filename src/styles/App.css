@@ -66,7 +66,6 @@ p {
 }
 
 .side-nav {
-  display: block;
   display: flex;
 }
 
@@ -74,7 +73,27 @@ p {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 701px) {
+  .come-our-discord, .feedback-area, .recomend-area {
+    max-width: 50vw;
+  }
+  .ps-sidebar-container {
+    width: 150px;
+    border-radius: 5px;
+  }
+  #side-menu {
+    background-color: #f5f5f5;
+  }
+  .css-1wvake5 {
+    border-color: #ffffff !important;
+  }
+  .ps-menu-button:nth-child(1):hover {
+    outline: 1.5px solid #1f618d;
+    box-shadow: 5px 5px 5px rgba(83, 82, 82, 0.6);
+    background-color: #ffffff !important;
+  }
+}
+@media screen and (max-width: 700px) {
   .side-nav {
     display: none !important;
   }
@@ -83,6 +102,9 @@ p {
   }
   #bottom-nav {
     height: 80px;
+  }
+  .come-our-discord, .feedback-area, .recomend-area {
+    max-width: 80vw;
   }
   .css-1trux4f-MuiBottomNavigation-root {
     padding-bottom: 10px;
@@ -163,7 +185,6 @@ p {
   color: #555555; /* 文章色 */
   background-color: #fff; /* 背景色 */
   border-top: 1px solid #555555; /* 枠線の太さ・色 */
-  max-width: 80vw;
 }
 .come-our-discord .dicord-title {
   position: absolute;
@@ -184,7 +205,6 @@ p {
   color: #555555; /* 文章色 */
   background-color: #fff; /* 背景色 */
   border-top: 1px solid #555555; /* 枠線の太さ・色 */
-  max-width: 80vw;
 }
 .recomend-area .recomend-title {
   text-align: center;
@@ -203,13 +223,12 @@ p {
 
 .feedback-area {
   position: relative;
-  margin: 100px auto 0 auto;
+  margin: 300px auto 0 auto;
   padding: 1.2em;
   color: #555555; /* 文章色 */
   background-color: #fff; /* 背景色 */
   border-top: 1px solid #555555; /* 枠線の太さ・色 */
   height: 300px;
-  max-width: 80vw;
 }
 .feedback-area .feedback-title {
   text-align: center;
