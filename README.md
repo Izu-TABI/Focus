@@ -6,8 +6,7 @@
 
 ## 目的
 作業へのハードルを下げることが目的である。<br>
-作業時間を記録する機能には、作業目標時間を5分から始める項目がある。これは「とりあえず5分やってみよう」という気持ちから30分、1時間、気付けは時間が経っていたという ”集中” を生み出す。
-<br>
+作業時間を記録する機能には、作業目標時間を5分から始める項目がある。これは「とりあえず5分やってみよう」という気持ちから30分、1時間、気付けは時間が経っていたという ”集中” を生み出す。<br>
 ## 機能
 1. 作業時間を記録する
 2. 記録した時間をグラフにする
@@ -15,13 +14,17 @@
 
 ## 特徴
 <p align="center">
-作業時間の経過を視覚的に表現　<br><br>
+<b>作業時間の経過を視覚的に表現</b>　<br><br>
 <img src="https://user-images.githubusercontent.com/92037081/221887563-0093fb53-8417-41ed-8b6c-d3517e5e9e8f.png" width="300" >
 </p><br><br>
 <p align="center">
-Discordとの連携　<br><br>
+<b>Discordとの連携</b>　<br><br>
 <img src="https://user-images.githubusercontent.com/92037081/221893405-822b08ec-8e10-42e7-b238-5fa10809a6e4.png" width="300" >
 </p>
+</p><br><br>
+<p align="center">
+<b>レスポンシブデザイン</b>　<br><br>
+<img src="https://user-images.githubusercontent.com/92037081/222885724-d22e467e-c000-40bc-817d-42e271251f72.gif" width="300" >
 
 
 
