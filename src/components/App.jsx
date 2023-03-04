@@ -59,7 +59,7 @@ function App() {
         <div>
             
           <div className="all-pages">    
-          <div className="side-nav" style={{position: 'absolute', top: '60px', left: '10px'}}>
+          <div className="side-nav" style={{position: 'absolute', top: '60px', left: '60px'}}>
 
           <Sidebar>
           <Menu id='side-menu'>
@@ -79,16 +79,22 @@ function App() {
               onClick={() => {handlePageChange('data')}}
             > Data </MenuItem>
 
-            <MenuItem
-              onClick={() => {handlePageChange('account')}}
-            > Account </MenuItem>
+            <SubMenu label="Account">
+              <MenuItem 
+                style={{backgroundColor: '#fbfbfb'}}
+                onClick={() => {handlePageChange('account')}}
+              > Settings </MenuItem>
+              <MenuItem
+                style={{backgroundColor: '#fbfbfb'}}
+              > Sign out </MenuItem>
+            </SubMenu>
 
             <MenuItem
               onClick={() => {handlePageChange('other')}}
             > Other </MenuItem>
           </Menu>
         </Sidebar>
-          </div>
+        </div>
             {
               homePage ? (
                 <Home></Home>
