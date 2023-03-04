@@ -11,6 +11,7 @@ html {
 }
 
 .all-pages, html {
+  overflow-x: hidden;
   background-color: white;
   width: 100vw;
   height: 100vh;
@@ -88,8 +89,7 @@ p {
     border-color: #ffffff !important;
   }
   .ps-menu-button:nth-child(1):hover {
-    outline: 1.5px solid #1f618d;
-    box-shadow: 5px 5px 5px rgba(83, 82, 82, 0.6);
+    outline: 1.5px solid #ddd;
     background-color: #ffffff !important;
   }
 }

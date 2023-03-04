@@ -54,6 +54,8 @@ const Timer = () => {
     document.querySelector('.title-main').style.display = 'none'
 
     document.querySelector('.bottom-nav').style.display = 'none'
+
+    document.querySelector('.side-nav').style.display = 'none'
     
     if (!hoursTemp) setHoursTemp(0)
     if (!minutesTemp) setMinutesTemp(0)
@@ -78,6 +80,7 @@ const Timer = () => {
     document.getElementById('cycle-timer').style.marginTop = '5.5vh'
 
     document.querySelector('.bottom-nav').style.display = 'block'
+    document.querySelector('.side-nav').style.display = 'block'
 
     document.getElementById('start').style.display = 'block'
     document.getElementById('reset').style.display = 'none'
