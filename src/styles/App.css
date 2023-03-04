@@ -79,16 +79,17 @@ p {
     max-width: 50vw;
   }
   .ps-sidebar-container {
-    width: 150px;
+    width: 200px;
     border-radius: 5px;
   }
   #side-menu {
-    background-color: #f5f5f5;
+    background-color: #eeebeb;
   }
   .css-1wvake5 {
     border-color: #ffffff !important;
   }
   .ps-menu-button:nth-child(1):hover {
+    color: #1C9BF0;
     outline: 1.5px solid #ddd;
     background-color: #ffffff !important;
   }
