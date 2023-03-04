@@ -135,11 +135,11 @@ function App() {
         <div>
             
           <div className="all-pages">    
-          <div className="side-nav" style={{position: 'absolute', top: '60px', left: '60px'}}>
+          <div className="side-nav" style={{position: 'absolute',  top: '60px', left: '30px'}}>
 
           <Sidebar>
           <Menu id='side-menu'>
-              <h4 style={{textAlign: 'center', padding: '10px 0',margin: '0', backgroundColor: '#1C9BF0', color: 'white'}}>Focus</h4>
+              <h4 style={{textAlign: 'center', padding: '10px 0',margin: '0', backgroundColor: '#1C9BF0', color: 'white'}}>Menu</h4>
               <div style={{height: '10px', backgroundColor: 'white'}}></div>
 
             <MenuItem
