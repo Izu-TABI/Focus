@@ -1,6 +1,5 @@
 import React from 'react'
 import { auth } from '../../database/firebase'
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 

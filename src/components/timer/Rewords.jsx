@@ -11,7 +11,6 @@ const Rewords = () => {
   return (
     <>
         <span id="rewardId"/>
-        {/* <big style={{fontSize: '50px'}}>🎉</big> */}
     </>
   )
 }
