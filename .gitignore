@@ -27,4 +27,3 @@ yarn-error.log*
 /.firebase
 /.firebaserc
 /firebase-debug.log
-/src/components/PrivacyPage.jsx

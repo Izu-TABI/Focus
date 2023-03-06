@@ -12,7 +12,7 @@ const Home = () => {
             document.querySelector('.side-nav').style.display = 'none'
         } else {
             document.querySelector('.bottom-nav').style.display = 'block'
-            document.querySelector('.side-nav').style.display = 'none'
+            document.querySelector('.side-nav').style.display = 'block'
         }
     }, [user]) 
 

@@ -32,7 +32,8 @@ const Other = () => {
             <p>不具合やご意見などは<a href="mailto:izutabi14@gmail.com">izutabi14@gmail.com</a>へよろしくお願い致します。</p>
           </div>
           <div style={{position: 'relative', display: 'flex', justifyContent: 'center'}}>
-          <small style={{color: 'gray', fontSize: '10px',position: 'absolute', bottom: '0', marginBottom: '80px'}}>Copyright © 2023 Izu-TABI All rights reserved.</small>
+          <a href="/privacy-policy" style={{fontSize: '15px', color: 'gray', position: 'absolute', bottom: '0', marginBottom: '150px'}}>プライバシーポリシー</a>
+          <small style={{color: 'gray', fontSize: '10px',position: 'absolute', bottom: '0', marginBottom: '130px'}}>Copyright © 2023 Izu-TABI All rights reserved.</small>
           </div>
         </div>
     </>

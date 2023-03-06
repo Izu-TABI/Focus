@@ -12,6 +12,8 @@ const Startpage = () => {
             作業を始めるハードルを下げ、継続できるような仕組みを取り入れました。</p><br /><br />
             <p> Focusについてさらに詳しく知りたい方は<a href="https://github.com/Izu-TABI/Focus#readme">こちら</a>をご覧ください。</p><br /><br />
             <p>サインインして作業を始めましょう。</p>
+
+            <a href="/privacy-policy">プライバシーポリシー</a>
         </div>
         <SignInButton></SignInButton>
     </>
