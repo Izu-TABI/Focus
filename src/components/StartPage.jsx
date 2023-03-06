@@ -10,12 +10,14 @@ const Startpage = () => {
             <img src={pencilImg} alt="" className='pencil-img' />
             <p>Focusへようこそ。<br /><br /> ”集中”をテーマに作られたアプリケーションです。<br /><br />
             作業を始めるハードルを下げ、継続できるような仕組みを取り入れました。</p><br /><br />
-            <p> Focusについてさらに詳しく知りたい方は<a href="https://github.com/Izu-TABI/Focus#readme">こちら</a>をご覧ください。</p><br /><br />
+            <p> 詳しく知りたい方は<a href="https://github.com/Izu-TABI/Focus#readme">こちら</a>をご覧ください。</p><br /><br />
             <p>サインインして作業を始めましょう。</p>
+            <SignInButton></SignInButton>
+            <div style={{marginTop: '15px'}}>
+              <a href="/privacy-policy" style={{fontSize:'15px', color: 'gray'}}>プライバシーポリシー</a>
+            </div>
 
-            <a href="/privacy-policy">プライバシーポリシー</a>
         </div>
-        <SignInButton></SignInButton>
     </>
   )
 }
