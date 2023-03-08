@@ -29,7 +29,7 @@ export async function updateTime(time) {
         })
 
     } catch (err) {
-        console.error("Error adding document: ", err);
+        window.location.href = '/error';
     }
 }
 

@@ -19,5 +19,6 @@ export async function add() {
         await setDoc(userRef, data)
     } catch (err) {
         console.error("Error adding document: ", err);
+        window.location.href = '/error';
     }
 }

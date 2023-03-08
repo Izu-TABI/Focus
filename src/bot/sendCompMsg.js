@@ -17,7 +17,8 @@ export default function sendCompMsg(username, time, discordSendJudge) {
                 })
             })
         } catch(err) {
-            console.error(err)
+            console.error(err);
+            window.location.href = '/error';
         }            
     }
     

@@ -10,7 +10,8 @@ export async function updateSendDiscord(check) {
         return "👍 : 正常に変更されました";
     } catch (err) {
         console.error("Error adding document: ", err);
-        return "問題が発生しました";
+        window.location.href = '/error';
+        return "失敗しました";
     }
 }
 

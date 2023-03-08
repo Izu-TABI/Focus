@@ -17,7 +17,7 @@ export async function changeNickname(inputNickname) {
 
     } catch (err) {
         console.error("Error adding document: ", err);
-        return "問題が発生しました";
+        window.location.href = '/error';
     }
 }
 

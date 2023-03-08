@@ -18,6 +18,7 @@ const AccountDeleteBtn = () => {
       }).then(() => {
         window.location.href = '/account-delete';
       }).catch((error) => {
+        window.location.href = '/error';
         console.error(error);
       });
     }
