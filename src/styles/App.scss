@@ -80,6 +80,10 @@ p {
 
 //pc
 @media screen and (min-width:701px) {
+    .signout-btn {
+        display: none;
+    }
+
 	.come-our-discord, .feedback-area, .recomend-area {
         max-width: 50vw;
     }
@@ -109,7 +113,15 @@ p {
 
 
 @media screen and (max-width: 700px) {
+    .signout-btn {
+        position: relative;
+        text-align: center;
+        margin-top: 38vh;
+    }
+
+
     // switch nav type
+
     .side-nav {
         display: none !important;
     }
@@ -204,12 +216,6 @@ p {
         }
 
 
-    }
-
-    .signout-btn {
-        position: relative;
-        text-align: center;
-        margin-top: 38vh;
     }
 }
 .come-our-discord {
