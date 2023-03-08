@@ -101,7 +101,7 @@ p {
   .signout-btn {
     position: relative;
     text-align: center;
-    margin-top: 38vh;
+    margin-top: 20vh;
   }
   .side-nav {
     display: none !important;
@@ -244,4 +244,14 @@ p {
   padding: 0 0.5em;
   font-weight: bold;
   background-color: #fff;
+}
+
+#see-you-msg {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 100vw;
+  height: 100vh;
 }/*# sourceMappingURL=App.css.map */

@@ -8,6 +8,7 @@ import { changeNickname } from '../database/changeNickname';
 import { getDatabaseInfo } from '../database/getDatabaseInfo';
 import { updateSendDiscord } from '../database/updateSendDiscord';
 import { Tune } from '@mui/icons-material';
+import AccountDeleteBtn from './certification/AccountDeleteBtn';
 
 const AccountSettings = () => {
   const [handleChangeNickname, setHandleChangeNickname] = useState(false)
@@ -87,6 +88,10 @@ const AccountSettings = () => {
 
           <div className='signout-btn'>
             <SignOutButton></SignOutButton>
+          </div>
+
+          <div className='account-delete-btn'>
+            <AccountDeleteBtn></AccountDeleteBtn>
           </div>
       </div>
     </>

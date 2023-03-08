@@ -5,6 +5,7 @@ import PrivacyPage from './PrivacyPage';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Main from './Main';
+import DeletePage from './DeletePage';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <div className="main">
             <Routes>
                 <Route path="/" element={<Main />}/>
+                <Route path="/account-delete" element={<DeletePage />}/>
                 <Route path="/privacy-policy" element={<PrivacyPage />}/>
             </Routes>
           </div>
