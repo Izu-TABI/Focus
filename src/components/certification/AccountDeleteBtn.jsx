@@ -27,7 +27,7 @@ const AccountDeleteBtn = () => {
 
   return (
     <>
-        <div onClick={() => {deleteAccount()}} style={{fontSize: '20px', color: 'red' ,width: '100px',margin: '20vw auto', backgroundColor: 'white', borderRadius: '15px',cursor: 'pointer', border: '2px solid gray', fontWeight: 'bold'}}>削除</div>
+        <div onClick={() => {deleteAccount()}} style={{fontSize: '20px', color: 'red' ,width: '100px',margin: '10vw auto', backgroundColor: 'white', borderRadius: '15px',cursor: 'pointer', border: '2px solid gray'}}>削除</div>
     </>
   )
 }

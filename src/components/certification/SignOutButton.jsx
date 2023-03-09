@@ -9,7 +9,7 @@ const SignOutButton = () => {
         window.location.href = '/';
     }
     return (
-        <div onClick={() => {signOut()}} style={{fontSize: '20px', borderBottom: '1.5px solid #555555', width: '140px', height: '40px', margin: '0 auto'}}><LogoutIcon sx={{width: '30px', height: '30px'}}></LogoutIcon>&nbsp;&nbsp;Sign out</div>
+        <div onClick={() => {signOut()}} style={{cursor: 'pointer',fontSize: '20px', borderBottom: '1.5px solid #d2cece', borderTop: '1.5px solid #d2cece', width: '140px', height: '60px', margin: '0 auto', display: 'flex', alignItems: 'center'}}><LogoutIcon sx={{width: '30px', height: '30px', justifyContent: 'center', marginLeft: '10px'}}></LogoutIcon>&nbsp;&nbsp;Sign out</div>
     )
 }
 
