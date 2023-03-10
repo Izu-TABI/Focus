@@ -12,7 +12,7 @@ export async function add() {
             nickname: '未設定',
             totalTime: 0,
             todayTotal: 12,
-            timestamp: "2022/11/1",
+            timestamp: todayString,
             aWeekTotalTime: [0, 0, 0, 0, 0, 0, 0],
             discordSendBool: false,
         }
