@@ -7,7 +7,7 @@ export async function updateTime(time) {
     try {
         const userRef = doc(db, 'users', auth.currentUser.uid)
         let day = new Date().getDay()
-        if (day == 0) {
+        if (day === 0) {
             day = 7;
         }
         let weekTimes = [7], totalTime = 0, todayTotal = 0;

@@ -14,7 +14,12 @@ export async function updateTodayTotal() {
     let date = new Date();
     let todayString = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate();
     let weekArray = [];
-    const today = (date.getDay()) - 1;
+    let today = new Date().getDay()
+    if (today == 0) {
+        today = 6;
+    } else {
+        today -= 1;
+    }
 
 
     getDatabaseInfo().then(async(database) => {
