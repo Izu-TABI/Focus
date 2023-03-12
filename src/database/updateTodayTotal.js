@@ -15,7 +15,7 @@ export async function updateTodayTotal() {
     let todayString = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate();
     let weekArray = [];
     let today = new Date().getDay()
-    if (today == 0) {
+    if (today === 0) {
         today = 6;
     } else {
         today -= 1;
@@ -26,10 +26,25 @@ export async function updateTodayTotal() {
     // データベースのタイムスタンプと今日の日付を比較する
 
         if (database.timestamp !== todayString) {
-            weekArray = await database.aWeekTotalTime;
-            for (let i = today; i < 7; i++) {
-                if (weekArray[i] !== 0) {
-                    weekArray[i] = 0;
+            const oldDateArray = database.timestamp.split('/')
+            const oldDate = new Date(oldDateArray[0], oldDateArray[1], oldDateArray[2]);
+            const diffMilliSec = date - oldDate;
+            const diffDays = parseInt(diffMilliSec / 1000 / 60 / 60 / 24);
+
+            // console.log(diffDays);
+
+            if (diffDays > 6) {
+                for (let i = 0; i < 7; i++) {
+                    if (weekArray[i] !== 0) {
+                        weekArray[i] = 0;
+                    }
+                }    
+            } else {
+                weekArray = await database.aWeekTotalTime;
+                for (let i = today; i < 7; i++) {
+                    if (weekArray[i] !== 0) {
+                        weekArray[i] = 0;
+                    }
                 }
             }
             
