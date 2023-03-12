@@ -6,7 +6,10 @@ import { getDatabaseInfo } from './getDatabaseInfo';
 export async function updateTime(time) {
     try {
         const userRef = doc(db, 'users', auth.currentUser.uid)
-        const day = new Date().getDay()
+        let day = new Date().getDay()
+        if (day == 0) {
+            day = 7;
+        }
         let weekTimes = [7], totalTime = 0, todayTotal = 0;
 
         getDatabaseInfo().then((data) => {
