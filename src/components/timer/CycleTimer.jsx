@@ -13,8 +13,6 @@ const CycleTimer = (props) => {
       const  element = document.getElementById('cycle-timer')
       let context = element.getContext('2d')
       
-      // let sita = 0
-      // const id = setInterval(() => {        
         
         if ( props.paused === false ) {
           context.fillStyle = "#e62e2e";
