@@ -16,10 +16,9 @@ export async function updateTodayTotal() {
 
     // 日付を取得
     let date = new Date();
-    console.log(date.getMonth())
     let todayString = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate();
     let weekArray = new Array(7).fill(0);
-    let today = new Date().getDay()
+    let today = new Date().getDay();
     if (today === 0) {
         today = 6;
     } else {
