@@ -8,9 +8,10 @@ import Loading from './Loading'
 
 const Home = () => {
     const [user, initialising] = useAuthState(auth);
-    let content = ""
+    let content = <Loading />
     if (initialising) {
         content = <Loading />
+        setTimeout(() => { }, 1000);
     } else if (user) {
         content = <Timer />;
     } else if (!user) {

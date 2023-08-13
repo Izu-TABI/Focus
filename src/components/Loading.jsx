@@ -1,10 +1,16 @@
 import React from 'react'
+import '../styles/LoadingAnimation.css'
 
 const Loading = () => {
 
   return (
     <>
-      now Loading...
+      <div className='spinner-wrap'>
+        <div className="fulfilling-bouncing-circle-spinner">
+          <div className="circle"></div>
+          <div className="orbit"></div>
+        </div>
+      </div>
     </>
   )
 }
