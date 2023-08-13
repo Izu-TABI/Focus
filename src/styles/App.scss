@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +10,8 @@ html {
     padding: 0;
 }
 
-.all-pages, html {
+.all-pages,
+html {
     overflow-x: hidden;
     background-color: #ffff;
     width: 100vw;
@@ -28,10 +30,11 @@ p {
 }
 
 @keyframes fadeInAnimation {
-    0%{
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
@@ -64,6 +67,7 @@ p {
 .user-info-area {
     display: flex;
     justify-content: center;
+
     span {
         font-weight: bold;
     }
@@ -84,7 +88,9 @@ p {
         display: none;
     }
 
-	.come-our-discord, .feedback-area, .recomend-area {
+    .come-our-discord,
+    .feedback-area,
+    .recomend-area {
         max-width: 50vw;
     }
 
@@ -97,6 +103,7 @@ p {
     #side-menu {
         background-color: #eeebeb;
     }
+
     .css-1wvake5 {
         border-color: #ffffff !important;
     }
@@ -106,10 +113,10 @@ p {
         outline: 1.5px solid #ddd;
         background-color: #ffffff !important;
     }
-    
+
 
 }
-    
+
 
 
 @media screen and (max-width: 700px) {
@@ -129,11 +136,14 @@ p {
     .bottom-nav footer {
         display: block !important;
     }
-    
+
     #bottom-nav {
         height: 80px;
     }
-    .come-our-discord, .feedback-area, .recomend-area {
+
+    .come-our-discord,
+    .feedback-area,
+    .recomend-area {
         max-width: 80vw;
     }
 
@@ -142,12 +152,15 @@ p {
         padding-bottom: 10px;
     }
 
-    .css-118p9r0-MuiButtonBase-root-MuiBottomNavigationAction-root, .css-1m0fn3j-MuiButtonBase-root-MuiBottomNavigationAction-root, .css-1so5viv {
+    .css-118p9r0-MuiButtonBase-root-MuiBottomNavigationAction-root,
+    .css-1m0fn3j-MuiButtonBase-root-MuiBottomNavigationAction-root,
+    .css-1so5viv {
         justify-content: flex-start !important;
         padding-top: 10px !important;
     }
 
-    .css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root, .css-sxw2zh  {
+    .css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root,
+    .css-sxw2zh {
         justify-content: flex-start !important;
         padding-top: 10px !important;
     }
@@ -155,7 +168,7 @@ p {
     .MuiBottomNavigationAction-label {
         font-size: 0.73em !important;
     }
-    
+
 }
 
 
@@ -170,7 +183,7 @@ p {
         margin-top: 30px;
         font-weight: bold;
     }
-    
+
     .nickname-area {
         margin: 0 auto;
         height: 100px;
@@ -178,7 +191,7 @@ p {
         display: flex;
         align-items: center;
         justify-content: center;
-    
+
         .change-nickname {
             margin-left: 15px;
         }
@@ -188,10 +201,11 @@ p {
     .check-discord {
         width: 100vw;
         margin-top: 10px;
-        float: left;   
+        float: left;
         display: flex;
         justify-content: center;
         align-items: center;
+
         .check-discord-contens {
             position: relative;
             margin-right: 15px;
@@ -203,12 +217,14 @@ p {
             height: 60px;
             border-bottom: 1px solid #d2cece;
             border-top: 1px solid #d2cece;
+
             .text {
                 position: absolute;
                 font-size: 16px;
                 color: #555555;
                 left: 12px;
             }
+
             .check-box-area {
                 position: absolute;
                 right: 0;
@@ -218,13 +234,18 @@ p {
 
     }
 }
+
 .come-our-discord {
     position: relative;
     margin: 70px auto 30px auto;
     padding: 1.2em;
-    color: #555555; /* 文章色 */
-    background-color: #fff; /* 背景色 */
-    border-top: 1px solid #555555; /* 枠線の太さ・色 */
+    color: #555555;
+    /* 文章色 */
+    background-color: #fff;
+    /* 背景色 */
+    border-top: 1px solid #555555;
+
+    /* 枠線の太さ・色 */
     .dicord-title {
         position: absolute;
         top: -15px;
@@ -235,7 +256,7 @@ p {
 }
 
 .about-discord {
-    h6  {
+    h6 {
         font-weight: bold;
     }
 }
@@ -244,12 +265,15 @@ p {
     position: relative;
     margin: 100px auto 20vh auto;
     padding: 1.2em;
-    color: #555555; /* 文章色 */
-    background-color: #fff; /* 背景色 */
-    border-top: 1px solid #555555; /* 枠線の太さ・色 */
-    
-    
-    .recomend-title {    
+    color: #555555;
+    /* 文章色 */
+    background-color: #fff;
+    /* 背景色 */
+    border-top: 1px solid #555555;
+    /* 枠線の太さ・色 */
+
+
+    .recomend-title {
         text-align: center;
         position: absolute;
         top: -15px;
@@ -260,6 +284,7 @@ p {
         font-weight: bold;
         background-color: #fff;
     }
+
     .sub-title {
         font-weight: bold;
     }
@@ -270,10 +295,14 @@ p {
     position: relative;
     margin: 200px auto 200px auto;
     padding: 1.2em;
-    color: #555555; /* 文章色 */
-    background-color: #fff; /* 背景色 */
-    border-top: 1px solid #555555; /* 枠線の太さ・色 */
+    color: #555555;
+    /* 文章色 */
+    background-color: #fff;
+    /* 背景色 */
+    border-top: 1px solid #555555;
+    /* 枠線の太さ・色 */
     height: 300px;
+
     .feedback-title {
         text-align: center;
         position: absolute;
@@ -297,17 +326,20 @@ p {
     width: 100vw;
     height: 100vh;
 }
+
 .error-msg-area {
-    padding: 0 20px;    
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column;
     width: 100vw;
     height: 100vh;
+
     h2 {
         margin-bottom: 30px;
     }
+
     p {
         margin-bottom: 20px;
     }
