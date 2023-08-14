@@ -3,7 +3,8 @@
     margin-top: 6vh;
 }
 
-#start, #reset {
+#start,
+#reset {
     width: 150px;
     height: 50px;
     margin-top: 5vh;
@@ -20,7 +21,8 @@
     margin-top: 4.6vh;
 }
 
-#input-hours, #input-minutes {
+#input-hours,
+#input-minutes {
     width: 150px;
     text-align: center;
     margin-top: 5px;
@@ -32,3 +34,60 @@
     display: none;
 }
 
+// circle-timer
+.timer-main {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.circle-timer-wrap {
+    content: "";
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 280px;
+    width: 280px;
+    border: 1px solid rgba(124, 124, 124, 0.55);
+    border-radius: 100%;
+
+
+    #circle-timer {
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        background-image: conic-gradient(rgba(255, 88, 133, 0.34) 0deg, white 0deg);
+        clip-path: circle();
+        display: grid;
+        place-items: center;
+        background-color: white;
+
+        .now-time-wrap {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // border: 1px solid rgba(124, 124, 124, 0.55);
+            height: 190px;
+            width: 190px;
+            border-radius: 100%;
+            background-color: white;
+
+            .now-time {
+                color: rgba(0, 0, 0, 0.524);
+                font-size: 35px;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(124, 124, 124, 0.55);
+                height: 180px;
+                width: 180px;
+                border-radius: 100%;
+            }
+        }
+
+
+    }
+}
