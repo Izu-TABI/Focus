@@ -11,7 +11,7 @@ const CycleTimer = (props) => {
 
   // 時計
   setInterval(() => {
-    const contents = `${new Date().getHours() + " "}` + ":" + `${" " + new Date().getMinutes()}`;
+    const contents = `${new Date().getHours() + " "}` + ":" + `${" " + (new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes())}`;
     setNow(contents);
   }, 1000);
 
