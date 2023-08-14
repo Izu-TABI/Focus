@@ -3,11 +3,20 @@ import React, { useState, useEffect } from 'react'
 let digitalId;
 let elapsedTime = 0;
 
+
+
+
 const CycleTimer = (props) => {
   const [time, setTime] = useState(0);
   const [elapsedTimeState, setelapsedTimeState] = useState(0);
   const [startTime, setStartTime] = useState(0);
   const [now, setNow] = useState("");
+
+
+  if (!props.paused) {
+
+  }
+
 
   // 時計
   setInterval(() => {

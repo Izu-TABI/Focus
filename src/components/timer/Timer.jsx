@@ -36,13 +36,13 @@ const Timer = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    document.getElementById('select-form-area').style.display = 'none'
+    // document.getElementById('select-form-area').style.display = 'none'
 
-    document.getElementById('input-hours').value = ''
-    document.getElementById('input-minutes').value = ''
+    // document.getElementById('input-hours').value = ''
+    // document.getElementById('input-minutes').value = ''
 
-    document.getElementById('input-hours').style.display = 'none'
-    document.getElementById('input-minutes').style.display = 'none'
+    // document.getElementById('input-hours').style.display = 'none'
+    // document.getElementById('input-minutes').style.display = 'none'
 
     // document.getElementById('cycle-timer').style.marginTop = '17vh'
 
@@ -65,11 +65,11 @@ const Timer = () => {
   }
 
   const handleReset = () => {
-    document.getElementById('select-form-area').style.display = 'block'
-    document.getElementById('custom-form-area').style.display = 'none'
+    // document.getElementById('select-form-area').style.display = 'block'
+    // document.getElementById('custom-form-area').style.display = 'none'
 
-    document.getElementById('input-hours').style.display = 'block'
-    document.getElementById('input-minutes').style.display = 'block'
+    // document.getElementById('input-hours').style.display = 'block'
+    // document.getElementById('input-minutes').style.display = 'block'
 
     document.getElementById('digital-timer').style.display = 'none'
 
@@ -104,7 +104,7 @@ const Timer = () => {
           <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
         </div>
 
-        <div style={{ textAlign: 'center' }} id='select-form-area'>
+        {/* <div style={{ textAlign: 'center' }} id='select-form-area'>
           <FormControl sx={{ m: 2, minWidth: 180 }}>
             <InputLabel id="demo-simple-select-autowidth-label" sx={{ color: 'gray' }}>作業時間</InputLabel>
             <Select
@@ -129,7 +129,7 @@ const Timer = () => {
           <div>
             <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes' autoComplete="off" placeholder='minutes' />
           </div>
-        </form>
+        </form> */}
 
         <div className="text-center">
           <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
