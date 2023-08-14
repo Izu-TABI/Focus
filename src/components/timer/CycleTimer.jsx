@@ -10,7 +10,7 @@ const CycleTimer = (props) => {
   const [time, setTime] = useState(0);
   const [elapsedTimeState, setelapsedTimeState] = useState(0);
   const [startTime, setStartTime] = useState(0);
-  const [now, setNow] = useState("");
+  const [now, setNow] = useState(`${new Date().getHours() + " "}` + ":" + `${" " + (new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes())}`);
 
 
   if (!props.paused) {
