@@ -10,7 +10,8 @@ html {
   padding: 0;
 }
 
-.all-pages, html {
+.all-pages,
+html {
   overflow-x: hidden;
   background-color: white;
   width: 100vw;
@@ -78,7 +79,9 @@ p {
   .signout-btn {
     display: none;
   }
-  .come-our-discord, .feedback-area, .recomend-area {
+  .come-our-discord,
+  .feedback-area,
+  .recomend-area {
     max-width: 50vw;
   }
   .ps-sidebar-container {
@@ -112,17 +115,22 @@ p {
   #bottom-nav {
     height: 80px;
   }
-  .come-our-discord, .feedback-area, .recomend-area {
+  .come-our-discord,
+  .feedback-area,
+  .recomend-area {
     max-width: 80vw;
   }
   .css-1trux4f-MuiBottomNavigation-root {
     padding-bottom: 10px;
   }
-  .css-118p9r0-MuiButtonBase-root-MuiBottomNavigationAction-root, .css-1m0fn3j-MuiButtonBase-root-MuiBottomNavigationAction-root, .css-1so5viv {
+  .css-118p9r0-MuiButtonBase-root-MuiBottomNavigationAction-root,
+  .css-1m0fn3j-MuiButtonBase-root-MuiBottomNavigationAction-root,
+  .css-1so5viv {
     justify-content: flex-start !important;
     padding-top: 10px !important;
   }
-  .css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root, .css-sxw2zh {
+  .css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root,
+  .css-sxw2zh {
     justify-content: flex-start !important;
     padding-top: 10px !important;
   }
@@ -186,9 +194,12 @@ p {
   position: relative;
   margin: 70px auto 30px auto;
   padding: 1.2em;
-  color: #555555; /* 文章色 */
-  background-color: #fff; /* 背景色 */
-  border-top: 1px solid #555555; /* 枠線の太さ・色 */
+  color: #555555;
+  /* 文章色 */
+  background-color: #fff;
+  /* 背景色 */
+  border-top: 1px solid #555555;
+  /* 枠線の太さ・色 */
 }
 .come-our-discord .dicord-title {
   position: absolute;
@@ -206,9 +217,12 @@ p {
   position: relative;
   margin: 100px auto 20vh auto;
   padding: 1.2em;
-  color: #555555; /* 文章色 */
-  background-color: #fff; /* 背景色 */
-  border-top: 1px solid #555555; /* 枠線の太さ・色 */
+  color: #555555;
+  /* 文章色 */
+  background-color: #fff;
+  /* 背景色 */
+  border-top: 1px solid #555555;
+  /* 枠線の太さ・色 */
 }
 .recomend-area .recomend-title {
   text-align: center;
@@ -229,9 +243,12 @@ p {
   position: relative;
   margin: 200px auto 200px auto;
   padding: 1.2em;
-  color: #555555; /* 文章色 */
-  background-color: #fff; /* 背景色 */
-  border-top: 1px solid #555555; /* 枠線の太さ・色 */
+  color: #555555;
+  /* 文章色 */
+  background-color: #fff;
+  /* 背景色 */
+  border-top: 1px solid #555555;
+  /* 枠線の太さ・色 */
   height: 300px;
 }
 .feedback-area .feedback-title {

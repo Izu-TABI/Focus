@@ -4,10 +4,19 @@ import { auth } from '../database/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Startpage from './StartPage'
 import { updateTodayTotal } from '../database/updateTodayTotal'
+import Loading from './Loading'
 
 const Home = () => {
-    const [user] = useAuthState(auth)
-    updateTodayTotal()
+    const [user, initialising] = useAuthState(auth);
+    let content = <Loading />
+    if (initialising) {
+        content = <Loading />
+        setTimeout(() => { }, 1000);
+    } else if (user) {
+        content = <Timer />;
+    } else if (!user) {
+        content = <Startpage />;
+    }
     useEffect(() => {
         if (!user) {
             document.querySelector('.bottom-nav').style.display = 'none'
@@ -16,21 +25,14 @@ const Home = () => {
             document.querySelector('.bottom-nav').style.display = 'block'
             document.querySelector('.side-nav').style.display = 'block'
         }
-    }, [user])
+    }, [user]);
+    updateTodayTotal();
 
     return (
         <>
             <div className="main-contents-area">
                 {
-                    user ? (
-                        <>
-                            <Timer></Timer>
-                        </>
-                    ) : (
-                        <>
-                            <Startpage></Startpage>
-                        </>
-                    )
+                    content
                 }
             </div>
 
