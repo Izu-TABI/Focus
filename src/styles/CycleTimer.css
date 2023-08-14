@@ -1,8 +1,3 @@
-.canvas {
-  transform: rotate(-90deg);
-  margin-top: 6vh;
-}
-
 #start,
 #reset {
   width: 150px;
@@ -32,7 +27,7 @@
 }
 
 .timer-main {
-  padding-top: 100px;
+  padding-top: 10vh;
   display: flex;
   justify-content: center;
 }
