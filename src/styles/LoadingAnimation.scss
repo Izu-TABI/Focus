@@ -1,9 +1,24 @@
+$spinner-height: 30vh;
+
 .spinner-wrap {
-  width: 100vw;
-  height: 100vh;
+  overflow-y: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 28vh;
+
+  span {
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    height: $spinner-height;
+    width: $spinner-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  width: 100vw;
+  height: 100vh;
 }
 
 .fulfilling-bouncing-circle-spinner,
@@ -12,31 +27,31 @@
 }
 
 .fulfilling-bouncing-circle-spinner {
-  height: 60px;
-  width: 60px;
+  height: $spinner-height;
+  width: $spinner-height;
   position: relative;
   animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;
 }
 
 .fulfilling-bouncing-circle-spinner .orbit {
-  height: 60px;
-  width: 60px;
+  height: $spinner-height;
+  width: $spinner-height;
   position: absolute;
   top: 0;
   left: 0;
   border-radius: 50%;
-  border: calc(60px * 0.03) solid #555555;
+  border: calc(260px * 0.03) solid #555555;
   animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite 4000ms ease;
 }
 
 .fulfilling-bouncing-circle-spinner .circle {
-  height: 60px;
-  width: 60px;
+  height: $spinner-height;
+  width: $spinner-height;
   color: #555555;
   display: block;
   border-radius: 50%;
   position: relative;
-  border: calc(45px * 0.1) solid #555555;
+  border: calc($spinner-height * 0.1) solid #555555;
   animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
   transform: rotate(0deg) scale(1);
 }
