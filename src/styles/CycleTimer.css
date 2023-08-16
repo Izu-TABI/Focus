@@ -1,17 +1,34 @@
-#start,
-#reset {
+.timer-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timer-input-container .form-area {
+  width: 100vw;
+}
+.timer-input-container #start {
+  width: 100px;
+  height: 50px;
+}
+
+.reset-area {
+  margin-top: 8vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.reset-area #digital-timer {
+  margin-top: 10px;
+  text-align: center;
+  display: none;
+}
+.reset-area #digital-timer p {
+  color: #555555;
+  font-size: 1em;
+}
+.reset-area #reset {
   width: 150px;
   height: 50px;
-  margin-top: 25vh;
-}
-
-.form-area {
-  width: 100vw;
-  margin-top: 5vh;
-}
-
-#select-form-area {
-  margin-top: 4.6vh;
 }
 
 #input-hours,
@@ -21,21 +38,19 @@
   margin-top: 5px;
 }
 
-#digital-timer {
-  margin-top: 5.5vh;
-  display: none;
-}
-
 .timer-main {
-  height: 300px;
-  width: 300px;
-  padding-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100vw;
+  padding-top: 2vh;
   margin: 0 auto;
 }
 
 .circle-timer-wrap {
   content: "";
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;

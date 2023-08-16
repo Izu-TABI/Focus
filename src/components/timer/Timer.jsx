@@ -36,13 +36,13 @@ const Timer = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // document.getElementById('select-form-area').style.display = 'none'
+    document.getElementById('select-form-area').style.display = 'none'
 
-    // document.getElementById('input-hours').value = ''
-    // document.getElementById('input-minutes').value = ''
+    document.getElementById('input-hours').value = ''
+    document.getElementById('input-minutes').value = ''
 
-    // document.getElementById('input-hours').style.display = 'none'
-    // document.getElementById('input-minutes').style.display = 'none'
+    document.getElementById('input-hours').style.display = 'none'
+    document.getElementById('input-minutes').style.display = 'none'
 
     // document.getElementById('cycle-timer').style.marginTop = '17vh'
 
@@ -65,11 +65,11 @@ const Timer = () => {
   }
 
   const handleReset = () => {
-    // document.getElementById('select-form-area').style.display = 'block'
-    // document.getElementById('custom-form-area').style.display = 'none'
+    document.getElementById('select-form-area').style.display = 'block'
+    document.getElementById('custom-form-area').style.display = 'none'
 
-    // document.getElementById('input-hours').style.display = 'block'
-    // document.getElementById('input-minutes').style.display = 'block'
+    document.getElementById('input-hours').style.display = 'block'
+    document.getElementById('input-minutes').style.display = 'block'
 
     document.getElementById('digital-timer').style.display = 'none'
 
@@ -104,38 +104,40 @@ const Timer = () => {
           <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
         </div>
 
-        {/* <div style={{ textAlign: 'center' }} id='select-form-area'>
-          <FormControl sx={{ m: 2, minWidth: 180 }}>
-            <InputLabel id="demo-simple-select-autowidth-label" sx={{ color: 'gray' }}>作業時間</InputLabel>
-            <Select
-              labelId="demo-simple-select-autowidth-label"
-              id="demo-simple-select-autowidth"
-              value={select}
-              onChange={(e) => handleSelectChange(e)}
-              label='作業時間'
-            >
-              <MenuItem value={5}>5分</MenuItem>
-              <MenuItem value={30}>30分</MenuItem>
-              <MenuItem value={60}>60分</MenuItem>
-              <MenuItem value={90}>90分</MenuItem>
-              <MenuItem value="custom">カスタム</MenuItem>
-            </Select>
-          </FormControl>
-        </div>
-        <form className='form-area' id='custom-form-area' style={{ display: 'none' }}>
-          <div>
-            <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto' id='input-hours' autoComplete="off" placeholder='hours' />
+        <div class="timer-input-container">
+          <div style={{ textAlign: 'center' }} id='select-form-area'>
+            <FormControl sx={{ m: 2, minWidth: 180 }}>
+              <InputLabel id="demo-simple-select-autowidth-label" sx={{ color: 'gray' }}>作業時間</InputLabel>
+              <Select
+                labelId="demo-simple-select-autowidth-label"
+                id="demo-simple-select-autowidth"
+                value={select}
+                onChange={(e) => handleSelectChange(e)}
+                label='作業時間'
+              >
+                <MenuItem value={5}>5分</MenuItem>
+                <MenuItem value={30}>30分</MenuItem>
+                <MenuItem value={60}>60分</MenuItem>
+                <MenuItem value={90}>90分</MenuItem>
+                <MenuItem value="custom">カスタム</MenuItem>
+              </Select>
+            </FormControl>
           </div>
-          <div>
-            <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes' autoComplete="off" placeholder='minutes' />
-          </div>
-        </form> */}
+          <form className='form-area' id='custom-form-area' style={{ display: 'none' }}>
+            <div>
+              <input type="text" name="hour" value={hoursTemp} onChange={handleChangeHours} className='form-control mx-auto' id='input-hours' autoComplete="off" placeholder='hours' />
+            </div>
+            <div>
+              <input type="text" name="minutes" value={minutesTemp} onChange={handleChangeMinutes} className='form-control mx-auto' id='input-minutes' autoComplete="off" placeholder='minutes' />
+            </div>
+          </form>
 
-        <div className="text-center">
-          <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
-          <Button variant="contained" onClick={() => { handleReset() }} id='reset' className="mx-auto" style={{ display: 'none' }} sx={{ backgroundColor: '#1C9BF0' }}>保存</Button>
-          <Button variant="contained" type="submit" onClick={(e) => { handleSubmit(e) }} id='start' className="mx-auto" sx={{ backgroundColor: '#1C9BF0' }}>開始</Button>
+          <Button variant="contained" type="submit" onClick={(e) => { handleSubmit(e) }} id='start' sx={{ backgroundColor: '#1C9BF0' }}>開始</Button>
         </div>
+      </div>
+      <div className="reset-area">
+        <Button variant="contained" onClick={() => { handleReset() }} id='reset' style={{ display: 'none' }} sx={{ backgroundColor: '#1C9BF0' }}>保存</Button>
+        <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
       </div>
     </>
   )

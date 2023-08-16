@@ -3,19 +3,12 @@ import React, { useState, useEffect } from 'react'
 let digitalId;
 let elapsedTime = 0;
 
-
-
-
 const CycleTimer = (props) => {
   const [time, setTime] = useState(0);
   const [elapsedTimeState, setelapsedTimeState] = useState(0);
   const [startTime, setStartTime] = useState(0);
   const [now, setNow] = useState(`${new Date().getHours() + " "}` + ":" + `${" " + (new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes())}`);
 
-
-  if (!props.paused) {
-
-  }
 
 
   // 時計
@@ -74,14 +67,14 @@ const CycleTimer = (props) => {
   return (
     <>
       <div className='timer-main'>
-        <div className="circle-timer-wrap">
-          <div id='circle-timer'>
-            <div className="now-time-wrap">
-              <div className='now-time'>{now}</div>
+          <div className="circle-timer-wrap">
+            <div id='circle-timer'>
+              <div className="now-time-wrap">
+                <div className='now-time'>{now}</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }
