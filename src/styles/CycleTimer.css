@@ -2,11 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-flow: column;
 }
 .timer-input-container .form-area {
   width: 100vw;
 }
 .timer-input-container #start {
+  margin-top: 20px;
   width: 100px;
   height: 50px;
 }
