@@ -104,7 +104,7 @@ const Timer = () => {
           <CycleTimer seconds={seconds} paused={paused}></CycleTimer>
         </div>
 
-        <div class="timer-input-container">
+        <div className="timer-input-container">
           <div style={{ textAlign: 'center' }} id='select-form-area'>
             <FormControl sx={{ m: 2, minWidth: 180 }}>
               <InputLabel id="demo-simple-select-autowidth-label" sx={{ color: 'gray' }}>作業時間</InputLabel>
