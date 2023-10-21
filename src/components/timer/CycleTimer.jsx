@@ -54,7 +54,7 @@ const CycleTimer = (props) => {
       elapsedTime = startTime === 0 ? 0 : Math.floor((now - startTime) / 1000)
       setelapsedTimeState(elapsedTime)
 
-      if (props.paused === false || elapsedTime === props.seconds) {
+      if (props.paused === false || elapsedTime === props.seconds && circleAngle >= 360) {
         setStartTime(0)
         elapsedTime = 0
         clearInterval(digitalId)
@@ -67,14 +67,14 @@ const CycleTimer = (props) => {
   return (
     <>
       <div className='timer-main'>
-          <div className="circle-timer-wrap">
-            <div id='circle-timer'>
-              <div className="now-time-wrap">
-                <div className='now-time'>{now}</div>
-              </div>
+        <div className="circle-timer-wrap">
+          <div id='circle-timer'>
+            <div className="now-time-wrap">
+              <div className='now-time'>{now}</div>
             </div>
           </div>
         </div>
+      </div>
     </>
   );
 }

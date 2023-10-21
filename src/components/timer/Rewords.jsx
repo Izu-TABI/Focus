@@ -1,18 +1,18 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 
 import { useReward } from 'react-rewards';
 
 
 const Rewords = () => {
-    const { reward, isAnimating} = useReward('rewardId', 'confetti', {elementCount: 150, lifetime: 5000, spread: 60});
-    useEffect(() => {
-        reward()
-    }, [])
+  const { reward, isAnimating } = useReward('rewardId', 'confetti', { elementCount: 150, lifetime: 210, spread: 60 });
+  useEffect(() => {
+    reward();
+  }, [])
   return (
     <>
-        <span id="rewardId"/>
+      <span id="rewardId" />
     </>
   )
 }
 
-export default Rewords  
+export default Rewords

@@ -16,10 +16,10 @@ function App() {
         <div className="contaier">
           <div className="main">
             <Routes>
-                <Route path="/" element={<Main />}/>
-                <Route path="/account-delete" element={<DeletePage />}/>
-                <Route path="/privacy-policy" element={<PrivacyPage />}/>
-                <Route path="/error" element={<ErrorPage />}/>
+              <Route path="/" element={<Main />} />
+              <Route path="/account-delete" element={<DeletePage />} />
+              <Route path="/privacy-policy" element={<PrivacyPage />} />
+              <Route path="/error" element={<ErrorPage />} />
             </Routes>
           </div>
         </div>
