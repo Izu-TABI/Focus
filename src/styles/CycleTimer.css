@@ -19,6 +19,9 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.reset-area button {
+  margin: 0 auto;
+}
 .reset-area #digital-timer {
   margin-top: 10px;
   text-align: center;

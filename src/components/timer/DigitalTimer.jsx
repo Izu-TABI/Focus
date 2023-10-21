@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import sendCmpMsg from '../../bot/sendCompMsg';
 import { getDatabaseInfo } from '../../database/getDatabaseInfo';
 import Rewords from './Rewords';
 
@@ -38,12 +37,6 @@ const DigitalTimer = (props) => {
 
       if (props.paused === false) {
 
-        if (((props.seconds - elapsedTime) < 0) && props.seconds !== 0) {
-          getDatabaseInfo().then((data) => {
-            sendCmpMsg(data.nickname, elapsedTime, data.discordSendBool)
-          })
-        }
-
         setStartTime(0)
         clearInterval(digitalId)
       }
@@ -58,8 +51,8 @@ const DigitalTimer = (props) => {
         (((props.seconds - elapsedTime) < 0) && props.seconds !== 0 && elapsedTime !== 0) ? (
           <>
             <Rewords></Rewords>
-            <p>合計時間<br />&nbsp;{Math.floor((elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>
-            <p>目標時間&nbsp;<b>+</b>&nbsp;{Math.floor((elapsedTimeState - props.seconds) / 3600)}&nbsp;時間&nbsp;{Math.floor((elapsedTimeState - props.seconds) % 3600 / 60)}&nbsp;分&nbsp;{Math.floor((elapsedTimeState - props.seconds)) % 60}&nbsp;秒</p>
+            <p>合計時間<br />&nbsp;{Math.floor((elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;{Math.ceil((elapsedTimeState) % 3600 % 60)}&nbsp;秒<br /></p>
+
           </>
         ) : (
           <>
