@@ -16,6 +16,11 @@ const AccountSettings = () => {
   const [nickName, setNickName] = useState('未設定');
   const [tmpNickName, setTmpNickName] = useState();
   const [successMsg, setSuccessMsg] = useState('');
+  const [sendDiscord, setSendDiscord] = useState(false);
+
+  getDatabaseInfo().then((data) => {
+    setSendDiscord(data.discordSendBool);
+  }, [changeDiscord])
   //ニックネームが更新されたら
   useEffect(() => {
     getDatabaseInfo().then((data) => {
@@ -67,6 +72,19 @@ const AccountSettings = () => {
           />
           <Button variant="contained" onClick={(e) => { handleSubmit(e) }} className='change-nickname' sx={{ height: '50px', width: '10px', backgroundColor: '#1C9BF0' }}>変更</Button>
         </form>
+        <div className='check-discord'>
+          <div className='check-discord-contens'>
+            <span className='text'>作業時間をDiscordへ送信</span>
+
+            <div className="check-box-area">
+              <Switch
+                checked={sendDiscord}
+                onChange={(e) => { handleChangeDiscord(e) }}
+                inputProps={{ 'aria-label': 'controlled' }}
+              />
+            </div>
+          </div>
+        </div>
 
         <div className='signout-btn'>
           <SignOutButton></SignOutButton>
