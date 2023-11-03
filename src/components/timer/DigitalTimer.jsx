@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getDatabaseInfo } from '../../database/getDatabaseInfo';
 import Rewords from './Rewords';
+import sendCmpMsg from '../../bot/sendCmpMsg';
 
 let digitalId;
 let elapsedTime = 0;
@@ -36,6 +37,12 @@ const DigitalTimer = (props) => {
       setelapsedTimeState(elapsedTime)
 
       if (props.paused === false) {
+        if (((props.seconds - elapsedTime) < 0) && props.seconds !== 0) {
+          getDatabaseInfo().then((data) => {
+            sendCmpMsg(data.nickname, elapsedTime, data.discordSendBool)
+          })
+        }
+
 
         setStartTime(0)
         clearInterval(digitalId)
