@@ -119,7 +119,7 @@ p {
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
     .signout-btn {
         position: relative;
         text-align: center;
@@ -184,9 +184,9 @@ p {
         font-weight: bold;
     }
 
-    .nickname-area {
-        margin: 0 auto;
-        height: 100px;
+    .input-area {
+        margin: 20px auto;
+        height: auto;
         width: 100vw;
         display: flex;
         align-items: center;

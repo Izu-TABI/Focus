@@ -14,6 +14,7 @@ const Home = () => {
         setTimeout(() => { }, 1000);
     } else if (user) {
         content = <Timer />;
+        updateTodayTotal();
     } else if (!user) {
         content = <Startpage />;
     }
@@ -26,7 +27,7 @@ const Home = () => {
             document.querySelector('.side-nav').style.display = 'block'
         }
     }, [user]);
-    updateTodayTotal();
+
 
     return (
         <>

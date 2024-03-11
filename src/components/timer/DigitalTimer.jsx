@@ -51,23 +51,22 @@ const DigitalTimer = (props) => {
 
     return () => clearInterval(digitalId);
   }, [time]);
-
   return (
-    <div id="digital-timer"><br />
+    <div id="digital-timer">
       {
-        (((props.seconds - elapsedTime) < 0) && props.seconds !== 0 && elapsedTime !== 0) ? (
+        (((props.seconds - elapsedTime) < 0) && props.seconds !== 0 && elapsedTime !== 0 && props.paused) ? (
           <>
             <Rewords></Rewords>
-            <p>合計時間<br />&nbsp;{Math.floor((elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;{Math.ceil((elapsedTimeState) % 3600 % 60)}&nbsp;秒<br /></p>
+            <>合計<br />&nbsp;{Math.floor((elapsedTimeState) / 3600) === 0 ? "" : Math.floor((elapsedTimeState) / 3600) + " " + "時間" + " "}{Math.ceil((elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;{Math.ceil((elapsedTimeState) % 3600 % 60)}&nbsp;秒<br /></>
 
           </>
         ) : (
           <>
             {
-              (props.seconds !== 0 && elapsedTime !== 0) ? (
-                <p>残り時間<br />&nbsp;{Math.floor((props.seconds - elapsedTimeState) / 3600)}&nbsp;時間&nbsp;{Math.ceil((props.seconds - elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></p>
+              (props.seconds !== 0 && elapsedTime !== 0 && props.paused) ? (
+                <>&nbsp;{Math.floor((props.seconds - elapsedTimeState) / 3600) === 0 ? "" : Math.floor((props.seconds - elapsedTimeState) / 3600) + " " + "時間" + " "}{Math.ceil((props.seconds - elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></>
               ) : (
-                null
+                props.now
               )
             }
           </>

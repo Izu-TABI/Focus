@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import DigitalTimer from './DigitalTimer';
 
 let digitalId;
 let elapsedTime = 0;
@@ -70,7 +71,9 @@ const CycleTimer = (props) => {
         <div className="circle-timer-wrap">
           <div id='circle-timer'>
             <div className="now-time-wrap">
-              <div className='now-time'>{now}</div>
+              <div className='now-time'>
+                <DigitalTimer seconds={props.seconds} paused={props.paused} now={now} />
+              </div>
             </div>
           </div>
         </div>

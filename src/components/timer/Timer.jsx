@@ -8,6 +8,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Goal from '../Goal';
 
 const Timer = () => {
   const [seconds, setSeconds] = useState('')
@@ -50,6 +51,7 @@ const Timer = () => {
     document.getElementById('reset').style.display = 'block'
 
     document.getElementById('digital-timer').style.display = 'block'
+    document.getElementById('goal').style.display = 'block'
 
     document.querySelector('.bottom-nav').style.display = 'none'
 
@@ -72,6 +74,7 @@ const Timer = () => {
     document.getElementById('input-minutes').style.display = 'block'
 
     document.getElementById('digital-timer').style.display = 'none'
+    document.getElementById('goal').style.display = 'none'
 
     document.querySelector('.bottom-nav').style.display = 'block'
     document.querySelector('.side-nav').style.display = 'block'
@@ -136,8 +139,8 @@ const Timer = () => {
         </div>
       </div>
       <div className="reset-area">
+        <Goal />
         <Button variant="contained" onClick={() => { handleReset() }} id='reset' style={{ display: 'none' }} sx={{ backgroundColor: '#1C9BF0' }}>保存</Button>
-        <DigitalTimer seconds={seconds} paused={paused}></DigitalTimer>
       </div>
     </>
   )
