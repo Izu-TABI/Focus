@@ -100,7 +100,7 @@ p {
     background-color: #ffffff !important;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .signout-btn {
     position: relative;
     text-align: center;
@@ -148,15 +148,15 @@ p {
   margin-top: 30px;
   font-weight: bold;
 }
-.user-setting-area .nickname-area {
-  margin: 0 auto;
-  height: 100px;
+.user-setting-area .input-area {
+  margin: 20px auto;
+  height: auto;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.user-setting-area .nickname-area .change-nickname {
+.user-setting-area .input-area .change-nickname {
   margin-left: 15px;
 }
 .user-setting-area .check-discord {

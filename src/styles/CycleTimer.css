@@ -14,7 +14,6 @@
 }
 
 .reset-area {
-  margin-top: 8vh;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -23,13 +22,7 @@
   margin: 0 auto;
 }
 .reset-area #digital-timer {
-  margin-top: 10px;
-  text-align: center;
   display: none;
-}
-.reset-area #digital-timer p {
-  color: #555555;
-  font-size: 1em;
 }
 .reset-area #reset {
   width: 150px;
@@ -87,7 +80,7 @@
 }
 .circle-timer-wrap #circle-timer .now-time-wrap .now-time {
   color: rgba(0, 0, 0, 0.524);
-  font-size: 35px;
+  font-size: 1.5em;
   position: absolute;
   display: flex;
   align-items: center;

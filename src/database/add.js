@@ -1,5 +1,5 @@
-import { doc , setDoc } from 'firebase/firestore';
-import {auth, db } from './firebase'
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from './firebase'
 
 export async function add() {
     try {
@@ -15,6 +15,7 @@ export async function add() {
             timestamp: todayString,
             aWeekTotalTime: [0, 0, 0, 0, 0, 0, 0],
             discordSendBool: false,
+            goal: "",
         }
         await setDoc(userRef, data)
     } catch (err) {
