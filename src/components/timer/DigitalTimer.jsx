@@ -10,6 +10,16 @@ const DigitalTimer = (props) => {
   const [time, setTime] = useState(0);
   const [elapsedTimeState, setelapsedTimeState] = useState(0);
   const [startTime, setStartTime] = useState(0);
+  const [now, setNow] = useState(`${new Date().getHours() + " "}` + ":" + `${" " + (new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes())}`);
+
+
+
+  // 時計
+  setInterval(() => {
+    const contents = `${new Date().getHours() + " "}` + ":" + `${" " + (new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes())}`;
+    setNow(contents);
+  }, 1000);
+
 
   //設定時間または開始、保存ボタンが押された場合
   useEffect(() => {
@@ -66,7 +76,7 @@ const DigitalTimer = (props) => {
               (props.seconds !== 0 && elapsedTime !== 0 && props.paused) ? (
                 <>&nbsp;{Math.floor((props.seconds - elapsedTimeState) / 3600) === 0 ? "" : Math.floor((props.seconds - elapsedTimeState) / 3600) + " " + "時間" + " "}{Math.ceil((props.seconds - elapsedTimeState) % 3600 / 60)}&nbsp;分&nbsp;<br /></>
               ) : (
-                props.now
+                <span className='now'>{now}</span>
               )
             }
           </>
