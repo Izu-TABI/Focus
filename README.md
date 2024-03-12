@@ -17,7 +17,7 @@
 ## 特徴
 <p align="center">
 <b>作業時間の経過を視覚的に表現・目標の明確化</b>　<br><br>
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/92037081/312128195-bf9d8e87-70f8-4b51-b540-689693b58fce.PNG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240312%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240312T150140Z&X-Amz-Expires=300&X-Amz-Signature=4b6bb065d44b475035804bc4035145ba76605e46e211fb8a7691b0440b6595a0&X-Amz-SignedHeaders=host&actor_id=92037081&key_id=0&repo_id=600042748" width="300" >
+<img src="https://github.com/Izu-TABI/Focus/assets/92037081/eab7a4a0-ca8b-41b3-bd5f-c45a3f47b7f8" width="300" >
 </p><br><br>
 
 <p align="center">
