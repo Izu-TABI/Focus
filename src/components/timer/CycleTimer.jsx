@@ -8,15 +8,6 @@ const CycleTimer = (props) => {
   const [time, setTime] = useState(0);
   const [elapsedTimeState, setelapsedTimeState] = useState(0);
   const [startTime, setStartTime] = useState(0);
-  const [now, setNow] = useState(`${new Date().getHours() + " "}` + ":" + `${" " + (new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes())}`);
-
-
-
-  // 時計
-  setInterval(() => {
-    const contents = `${new Date().getHours() + " "}` + ":" + `${" " + (new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes())}`;
-    setNow(contents);
-  }, 1000);
 
 
   useEffect(() => {
@@ -72,7 +63,7 @@ const CycleTimer = (props) => {
           <div id='circle-timer'>
             <div className="now-time-wrap">
               <div className='now-time'>
-                <DigitalTimer seconds={props.seconds} paused={props.paused} now={now} />
+                <DigitalTimer seconds={props.seconds} paused={props.paused} />
               </div>
             </div>
           </div>
