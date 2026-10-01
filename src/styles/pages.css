@@ -1,0 +1,601 @@
+/* ---------- 記録 ---------- */
+
+.tiles {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+
+.tile {
+  min-width: 0;
+  padding: 14px 16px 18px;
+}
+
+.tile:first-child {
+  padding-left: 0;
+}
+
+.tile + .tile {
+  border-left: 1px solid var(--rule);
+}
+
+.tile dd {
+  margin: 0;
+}
+
+.tile-value {
+  margin-top: 8px;
+  font-size: clamp(24px, 6.4vw, 32px);
+  font-weight: 300;
+  line-height: 1.15;
+}
+
+.tile-note {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 559px) {
+  .tiles {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tile:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .tile:nth-child(n + 3) {
+    border-top: 1px solid var(--rule);
+  }
+}
+
+.guest-note {
+  margin: 16px 0 28px;
+  color: var(--ink-2);
+  font-size: 13px;
+}
+
+.stats-page .section:first-of-type {
+  margin-top: 28px;
+}
+
+.week-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.week-nav .meta {
+  margin-right: 8px;
+}
+
+.week-chart {
+  height: 180px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--ink);
+}
+
+.week-col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.week-value {
+  font-size: 12px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.week-bar {
+  width: min(44%, 28px);
+  background: var(--bar);
+  transition: height 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.week-col.is-today .week-bar {
+  background: var(--accent);
+}
+
+.week-col.is-today .week-value {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.week-labels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding-top: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.week-labels .is-today {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.chart-unit {
+  margin-top: 8px;
+  text-align: right;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.heatmap-scroll {
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+}
+
+.heatmap {
+  width: max-content;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 8px;
+  row-gap: 6px;
+}
+
+.heatmap-months {
+  grid-column: 2;
+  height: 14px;
+  display: flex;
+  gap: 2px;
+  font-size: 10px;
+  color: var(--ink-2);
+}
+
+.heatmap-months span {
+  flex: none;
+  width: 11px;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.heatmap-weekdays {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: repeat(7, 11px);
+  gap: 2px;
+  font-size: 10px;
+  line-height: 11px;
+  color: var(--ink-2);
+}
+
+.heatmap-grid {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  gap: 2px;
+}
+
+.heatmap-week {
+  display: grid;
+  grid-template-rows: repeat(7, 11px);
+  gap: 2px;
+}
+
+.heat {
+  display: block;
+  width: 11px;
+  height: 11px;
+  border-radius: 1px;
+  background: var(--heat-0);
+}
+
+/* 広い画面では年間のグラフを横幅いっぱいに */
+@media (min-width: 900px) {
+  .heatmap-months span,
+  .heat {
+    width: 13px;
+  }
+
+  .heat {
+    height: 13px;
+  }
+
+  .heatmap-weekdays,
+  .heatmap-week {
+    grid-template-rows: repeat(7, 13px);
+  }
+
+  .heatmap-weekdays {
+    line-height: 13px;
+  }
+}
+
+.heat[data-level="1"] {
+  background: var(--heat-1);
+}
+
+.heat[data-level="2"] {
+  background: var(--heat-2);
+}
+
+.heat[data-level="3"] {
+  background: var(--heat-3);
+}
+
+.heat[data-level="4"] {
+  background: var(--heat-4);
+}
+
+.heat[data-level="future"] {
+  background: transparent;
+}
+
+.heat-legend {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+  font-size: 11px;
+  color: var(--ink-2);
+}
+
+.heat-legend .heat:first-of-type {
+  margin-left: 4px;
+}
+
+.heat-legend .heat:last-of-type {
+  margin-right: 4px;
+}
+
+.legacy-note {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.titles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  column-gap: 40px;
+  border-top: 1px solid var(--rule);
+}
+
+@media (min-width: 640px) {
+  .titles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.title-item {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.title-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--tick);
+}
+
+.title-item.is-owned .title-icon {
+  color: var(--ink);
+}
+
+.title-body {
+  min-width: 0;
+}
+
+.title-name {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+}
+
+.title-item.is-owned .title-name {
+  color: var(--ink);
+}
+
+.title-description {
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.title-progress {
+  height: 2px;
+  margin-top: 8px;
+  background: var(--fill);
+}
+
+.title-progress span {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+}
+
+.title-status {
+  align-self: start;
+  padding-top: 2px;
+  font-size: 12px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ---------- 設定 ---------- */
+
+.settings-page .section:first-of-type {
+  border-top-color: var(--ink);
+}
+
+.card-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Google のログインボタン（ブランドガイドラインの色） */
+.google-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+  padding: 0 18px 0 14px;
+  border: 1px solid #747775;
+  border-radius: var(--radius);
+  background: #ffffff;
+  color: #1f1f1f;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.google-button:hover {
+  background: #f6f7f8;
+}
+
+:root[data-theme="dark"] .google-button {
+  border-color: #8e918f;
+  background: #131314;
+  color: #e3e3e3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .google-button {
+    border-color: #8e918f;
+    background: #131314;
+    color: #e3e3e3;
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar-large {
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+}
+
+.profile-text {
+  min-width: 0;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.profile-text .small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sync-status {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.sync-status::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  background: var(--ink-3);
+}
+
+.sync-status.is-ok::before {
+  background: #2f9a52;
+}
+
+.sync-status.is-warning::before {
+  background: var(--warn);
+}
+
+.inline-form {
+  display: flex;
+  gap: 8px;
+}
+
+.inline-form .text-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.field-note {
+  margin-top: 8px;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.section-head + .setting-row {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.setting-row:last-child {
+  padding-bottom: 0;
+}
+
+.setting-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.setting-note {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.theme-switch {
+  flex: none;
+  grid-template-columns: repeat(3, auto);
+}
+
+.theme-switch button {
+  min-height: 34px;
+  font-size: 13px;
+}
+
+.dialog-note {
+  margin-top: 8px;
+}
+
+.settings-links {
+  margin: 8px 0 10px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-size: 13px;
+}
+
+.settings-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink-2);
+  text-underline-offset: 3px;
+}
+
+.settings-links svg {
+  width: 13px;
+  height: 13px;
+}
+
+.version {
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+/* ---------- 説明・プライバシーポリシー ---------- */
+
+.prose {
+  max-width: 680px;
+}
+
+.prose .page-title {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.prose h2 {
+  margin: 36px 0 10px;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+
+.prose p,
+.prose li,
+.prose dd {
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.prose p + p {
+  margin-top: 12px;
+}
+
+.prose .lead {
+  margin-bottom: 14px;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.prose ol,
+.prose ul {
+  margin: 8px 0;
+  padding-left: 1.4em;
+}
+
+.prose .tips {
+  margin-top: 14px;
+}
+
+.install-steps dt {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.install-steps dd {
+  margin: 2px 0 0;
+}
+
+.inline-icon {
+  width: 13px;
+  height: 13px;
+  margin-left: 2px;
+  vertical-align: -1px;
+}
+
+.prose .prose-footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.prose .prose-dates {
+  margin-top: 36px;
+  text-align: right;
+  font-size: 12px;
+}
