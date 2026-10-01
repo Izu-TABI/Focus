@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Focus</title>
+    <meta name="description" content="「とりあえず5分」から始める作業タイマー。ログインなしですぐ使えて、積み重ねを1年分のグラフと称号で振り返れます。" />
+    <meta name="theme-color" content="#f4f3ef" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Focus" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Focus — とりあえず5分から始める作業タイマー" />
+    <meta property="og:description" content="ログインなしですぐ使えて、積み重ねを1年分のグラフと称号で振り返れます。" />
+    <meta property="og:url" content="https://izu-focus.web.app/" />
+    <meta property="og:image" content="https://izu-focus.web.app/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // 保存されたテーマを描画前に当てて、ちらつきを防ぐ
+      try {
+        const theme = JSON.parse(localStorage.getItem('focus:settings'))?.theme
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

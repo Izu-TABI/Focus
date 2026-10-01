@@ -1,0 +1,448 @@
+/* タイマー画面は、ヘッダーとタブバーを除いた高さの中央に置く */
+.timer-view {
+  min-height: calc(100svh - var(--chrome));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(32px, 6.5svh, 64px);
+  padding: 28px 0;
+}
+
+/* 文字盤の下の操作部。横幅をそろえ、目標だけ少し離す */
+.timer-controls {
+  width: min(100%, 372px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timer-controls > .goal,
+.timer-controls > .goal-form {
+  margin-top: 20px;
+}
+
+/* ---------- 文字盤 ---------- */
+
+.dial {
+  position: relative;
+  width: min(80vw, calc(36svh + 44px), 340px);
+  aspect-ratio: 1;
+}
+
+.dial svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tick {
+  stroke: var(--tick);
+  stroke-width: 1.4;
+  transition: stroke 0.4s ease;
+}
+
+.tick.is-major {
+  stroke-width: 2.4;
+}
+
+.tick.is-on {
+  stroke: var(--ink);
+}
+
+.tick.is-head {
+  stroke: var(--accent);
+}
+
+.dial[data-state="paused"] .tick.is-on {
+  stroke: var(--ink-3);
+}
+
+.dial[data-state="done"] .tick {
+  stroke: var(--accent);
+}
+
+.dial-center {
+  position: absolute;
+  inset: 17%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.clock {
+  font-size: clamp(50px, 15vw, 72px);
+  font-weight: 200;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.dial[data-state="paused"] .clock {
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.dial-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--ink-2);
+}
+
+.dial[data-state="done"] .dial-label {
+  color: var(--accent-ink);
+}
+
+.dial-caption {
+  font-size: 13px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- 作業時間の選択 ---------- */
+
+.presets {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* 1列に収まらない幅では 3×2 に並べる */
+@media (max-width: 479px) {
+  .presets {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stepper {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+
+.stepper-button {
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: none;
+}
+
+.stepper-button:hover:not(:disabled) {
+  background: var(--fill);
+}
+
+.stepper-button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.stepper-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.stepper-value {
+  display: grid;
+  place-items: center;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.start-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* ---------- 目標 ---------- */
+
+.goal {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  min-height: 40px;
+  padding: 10px 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  background: none;
+  text-align: left;
+}
+
+.goal .label {
+  flex: none;
+}
+
+.goal-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.goal-action {
+  flex: none;
+  color: var(--ink-2);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.goal:hover .goal-action {
+  color: var(--ink);
+}
+
+.goal.is-empty .goal-text {
+  color: var(--ink-2);
+}
+
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+}
+
+.goal-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+/* ---------- 作業中 ---------- */
+
+.timer-view.is-running .timer-controls {
+  align-items: center;
+  gap: 24px;
+}
+
+.running-goal {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  max-width: min(100%, 440px);
+  font-size: 14px;
+}
+
+.running-goal .goal-text {
+  white-space: normal;
+}
+
+.session-controls {
+  width: min(100%, 300px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.session-controls .btn {
+  min-height: 48px;
+}
+
+.session-controls,
+.notify-prompt,
+.keyboard-hint,
+.running-goal {
+  transition: opacity 0.3s ease;
+}
+
+/* しばらく操作がないとボタンを薄くする（触れば戻る） */
+.timer-view[data-dimmed="true"] .session-controls,
+.timer-view[data-dimmed="true"] .notify-prompt,
+.timer-view[data-dimmed="true"] .keyboard-hint {
+  opacity: 0.15;
+  transition-duration: 1.5s;
+}
+
+.timer-view[data-dimmed="true"] .running-goal {
+  opacity: 0.55;
+  transition-duration: 1.5s;
+}
+
+.notify-prompt {
+  width: min(100%, 440px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-2);
+  font-size: 13px;
+}
+
+.notify-prompt > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.keyboard-hint {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+@media (pointer: coarse) {
+  .keyboard-hint {
+    display: none;
+  }
+}
+
+/* ---------- 終了後のまとめ ---------- */
+
+.summary {
+  width: min(100%, 400px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: summary-in 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes summary-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.summary-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--ink-2);
+}
+
+.summary-kicker.is-reached {
+  color: var(--accent-ink);
+}
+
+.summary-time {
+  margin-top: 10px;
+  font-size: 72px;
+  font-weight: 200;
+  line-height: 1.05;
+}
+
+.summary-time .unit {
+  font-size: 0.36em;
+  font-weight: 400;
+}
+
+.summary-sub {
+  margin-top: 6px;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+
+.summary-stats {
+  width: 100%;
+  margin: 28px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.summary-stats div {
+  padding: 14px 0 16px;
+}
+
+.summary-stats div + div {
+  border-left: 1px solid var(--rule);
+}
+
+.summary-stats dd {
+  margin: 4px 0 0;
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.summary-badges {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.summary-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  font-size: 14px;
+}
+
+.summary-badge svg {
+  flex: none;
+  width: 30px;
+  height: 30px;
+}
+
+.summary-badge .label {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--accent-ink);
+}
+
+.summary-note {
+  margin-top: 18px;
+  color: var(--ink-2);
+  font-size: 13px;
+}
+
+.summary-actions {
+  width: 100%;
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.summary-actions .btn-large {
+  width: 100%;
+}
+
+/* ---------- ほかのページにいるときの作業中表示 ---------- */
+
+.session-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+}
+
+.session-pill-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  animation: blink 1.6s ease-in-out infinite;
+}
+
